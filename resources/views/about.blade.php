@@ -55,22 +55,22 @@
     <div class="team">
 
 
-        <div class="member"><img class="member-image" src="/images/ada.jpg" alt="Adriana"><br>
+        <div class="member"><img class="member-image" src="/public/images/ada.jpg" alt="Adriana"><br>
             <h3> Adriana Jaworska</h3>
         </div>
-        <div class="member"><img class="member-image" src="/images/iana.jpg" alt="Iana"><br>
+        <div class="member"><img class="member-image" src="/public/images/iana.jpg" alt="Iana"><br>
             <h3>Iana Pavliuk</h3>
         </div>
-        <div class="member"><img class="member-image" src="/images/daniel.jpg" alt="Daniel"><br>
+        <div class="member"><img class="member-image" src="/public/images/daniel.jpg" alt="Daniel"><br>
             <h3>Daniel Vacas Crespo</h3>
         </div>
-        <div class="member"><img class="member-image" src="/images/dainius.png" alt="Dainius"><br>
+        <div class="member"><img class="member-image" src="/public/images/dainius.png" alt="Dainius"><br>
             <h3>Dainius Čeliauskas</h3>
         </div>
-        <div class="member"><img class="member-image" src="/images/marius.png" alt="Marius"><br>
+        <div class="member"><img class="member-image" src="/public/images/marius.png" alt="Marius"><br>
             <h3>Marius Chirița </h3>
         </div>
-        <div class="member"><img class="member-image" src="/images/maciej.jpg" alt="Maciej"><br>
+        <div class="member"><img class="member-image" src="/public/images/maciej.jpg" alt="Maciej"><br>
             <h3>Maciej Grasela</h3>
         </div>
         <div class="dreamteam">
