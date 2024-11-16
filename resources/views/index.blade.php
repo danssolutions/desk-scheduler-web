@@ -41,7 +41,7 @@
         }
 
         .table_alarm tr:hover {
-            background-color: #e0e0e0;
+            background-color: #4446b1;
         }
 
 
@@ -99,7 +99,7 @@
         <table class="table_alarm">
             <thead>
                 <tr>
-                    <th>ID</th>
+                    <th>ID </th>
                     <th>Name of Alarm</th>
                     <th>Tables</th>
                     <th>Height</th>
@@ -147,6 +147,9 @@
 
             </tbody>
         </table>
+
+
+
     </div>
 </body>
 

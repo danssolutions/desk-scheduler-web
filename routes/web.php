@@ -24,7 +24,7 @@ Route::get('/about', function () {
 });
 
 
-Route::get('/',[PostController::class,'index']);
+Route::get('/', [PostController::class, 'index'])->name('index');
 
 Route::get('/create',function(){
     return view('create');
