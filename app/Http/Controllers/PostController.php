@@ -10,7 +10,6 @@ class PostController extends Controller
    
     public function index()
 {
-    
     $posts = Post::paginate(3);
     return view('index')->with('posts', $posts);
 }
@@ -87,6 +86,8 @@ class PostController extends Controller
             'week_end', 
             'alarm_sound'
         ]));
+
+        notify()->success('Alarm updated successfully!');
 
         return redirect("/");
     }

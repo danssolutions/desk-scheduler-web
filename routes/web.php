@@ -40,4 +40,10 @@ Route::get('/edit/{id}',action: [PostController::class,'edit']);
 Route::put('/update/{id}',action: [PostController::class,'update']);
 
 
+
+
+
+
+Route::put('/posts/{id}', [PostController::class, 'update']);
+
 require __DIR__.'/auth.php';
