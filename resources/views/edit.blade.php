@@ -92,6 +92,8 @@
                     <option value="Table_6" {{ $posts->tables == 'Table_6' ? 'selected' : '' }}>Table_6: XYZ</option>
                     <option value="Table_7" {{ $posts->tables == 'Table_7' ? 'selected' : '' }}>Table_7: Boss</option>
                 </select>
+                <input value="{{ $posts->height }}" type="number" name="height" class="form-control"
+                    placeholder="Height" min="660" max="1320" required>
 
                 <input value="{{ $posts->time_from }}" type="time" name="time_from" class="form-control"
                     placeholder="Time_from">

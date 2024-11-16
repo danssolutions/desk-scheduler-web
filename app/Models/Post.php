@@ -12,6 +12,7 @@ protected $primaryKey="id";
     protected $fillable = [
         'name',
         'tables',
+        'height',
         'time_from',
         'time_to',
         'week_start',

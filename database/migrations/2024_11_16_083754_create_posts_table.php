@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name'); 
             $table->json('tables');
+            $table->integer('height');
             $table->time('time_from');
             $table->time('time_to'); 
             $table->string('week_start');

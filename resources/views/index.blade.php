@@ -102,6 +102,7 @@
                     <th>ID</th>
                     <th>Name of Alarm</th>
                     <th>Tables</th>
+                    <th>Height</th>
                     <th>Time_from</th>
                     <th>Time_to</th>
                     <th>Week_start</th>
@@ -118,12 +119,12 @@
                         <th scope="row">{{ $post->id }}</th>
                         <td>{{ $post->name }}</td>
                         <td>{{ $post->tables }}</td>
+                        <td>{{ $post->height }}</td>
                         <td>{{ $post->time_from }}</td>
                         <td>{{ $post->time_to }}</td>
                         <td>{{ $post->week_start }}</td>
                         <td>{{ $post->week_end }}</td>
                         <td>{{ $post->alarm_sound }}</td>
-
                         <td>
                             <form action="/edit/{{ $post->id }}" method="get">
                                 <button class="alarm_button" type="submit">Update</button>

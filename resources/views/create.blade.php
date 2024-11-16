@@ -85,6 +85,9 @@
                     <option value="Table_6">Table_6: XYZ</option>
                     <option value="Table_7">Table_7: Boss</option>
                 </select>
+                <input type="number" name="height" class="form-control" placeholder="Height" min="660"
+                    max="1320" required>
+
 
                 <input type="time" name="time_from" class="form-control" placeholder="Time_from" required>
                 <input type="time" name="time_to" class="form-control" placeholder="Time_to" required>

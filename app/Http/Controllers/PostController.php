@@ -10,6 +10,7 @@ class PostController extends Controller
    
     public function index()
     {
+      
         $posts = Post::all();
         return view('index')->with('posts', $posts);
     }
@@ -25,6 +26,7 @@ class PostController extends Controller
         $request->validate([
             'name' => 'required|string',
             'tables' => 'required|string',
+            'height' => 'required|integer',
             'time_from' => 'required|string',
             'time_to' => 'required|string',
             'week_start' => 'required|string',
@@ -35,6 +37,7 @@ class PostController extends Controller
         $post = new Post([
             "name" => $request->name,
             "tables" => $request->input('tables'),
+            'height' => $request->height,
             "time_from" => $request->time_from,
             "time_to" => $request->time_to,
             "week_start" => $request->week_start,
@@ -64,6 +67,7 @@ class PostController extends Controller
         $request->validate([
             'name' => 'required|string',
             'tables' => 'required|string',
+            'height'=>'required|integer',
             'time_from' => 'required|string',
             'time_to' => 'required|string',
             'week_start' => 'required|string',
@@ -76,6 +80,7 @@ class PostController extends Controller
         $post->update($request->only([
             'name', 
             'tables', 
+            'height',
             'time_from', 
             'time_to', 
             'week_start', 
