@@ -1,13 +1,20 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\MainController;
 
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/main', function(){ return view('main');});
+
+Route::get('/contact', [ContactController::class, 'showContactForm'])->name('contact.form');
+Route::post('/contact', [ContactController::class, 'sendEmail'])->name('contact.send');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
