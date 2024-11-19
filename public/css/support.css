@@ -88,7 +88,7 @@
 
 
 
-/*stuff for support page*/
+/*stuff for scontact page*/
 .main-content 
 {
     background: linear-gradient(to bottom, #002e5b, #f9f9f9);
@@ -168,7 +168,7 @@ button[type="submit"]
 }
 
 button[type="submit"]:hover
- {
+{
     background-color: #710404;
     transition: border-left-color 0.2s ease;
 }
@@ -181,7 +181,8 @@ button[type="submit"]:hover
 }
 
 /*stuff for main page*/
-.mainpage {
+.mainpage 
+{
     display: flex;
     width: 80%;
     max-width: 1200px;
@@ -192,26 +193,30 @@ button[type="submit"]:hover
     padding-left: 15%;
 }
 
-.left-section {
+.left-section 
+{
     flex: 1;
     text-align: center;
     padding: 20px;
     background: #ffffff;
 }
 
-.image {
+.image 
+{
     max-width: 100%;
     height: auto;
     border-radius: 8px;
 }
 
-.text {
+.text 
+{
     margin-top: 15px;
     color: #000000;
     font-size: 16px;
 }
 
-.right-section {
+.right-section 
+{
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -221,7 +226,8 @@ button[type="submit"]:hover
     background: #ffffff;
 }
 
-.btn {
+.btn 
+{
     margin: 10px 0;
     padding: 10px 20px;
     font-size: 16px;
@@ -233,8 +239,58 @@ button[type="submit"]:hover
     transition: background-color 0.3s ease;
 }
 
-.btn:hover {
+.btn:hover 
+{
     background-color: #00152a;
+}
+
+
+/*stuff for profile page*/
+
+.profilecnt 
+{
+    background: #fff;
+    border-radius: 10px;
+    padding: 40px;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-header 
+{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+
+.profile-image img 
+{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #002e5b;
+    margin-right: 15px;
+}
+
+
+.username 
+{
+    font-size: 28px;
+    color: #333;
+}
+
+
+.profile-details p 
+{
+    margin-bottom: 10px;
+}
+
+.profile-details strong 
+{
+    color: #002e5b;
 }
 
 

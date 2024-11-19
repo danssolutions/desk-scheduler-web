@@ -12,6 +12,7 @@ Route::get('/', function () {
 });
 
 Route::get('/main', function(){ return view('main');});
+Route::get('/profilepage', function(){ return view('profile');});
 
 Route::get('/contact', [ContactController::class, 'showContactForm'])->name('contact.form');
 Route::post('/contact', [ContactController::class, 'sendEmail'])->name('contact.send');

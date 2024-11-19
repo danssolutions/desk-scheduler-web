@@ -28,9 +28,23 @@
 
 
 
-<main class="profilepic">
+     <main class="profilecnt">
+        <div class="profile-header">
+            <div class="profile-image">
+                <img src="profile.jpg" alt="Profile Image">
+            </div>
+            <h2 class="username">loh</h2>
+        </div>
 
-</main>
+        <div class="profile-details">
+            <p><strong>Email:</strong> loh@example.com</p>
+            <p><strong>Phone:</strong> +1 234 567 890</p>
+            <p><strong>Company:</strong></p>
+            <p>jdgfsrsjsyjrsrydgcnbjhgfyhdtysxffcgvnvmjhyfktdfcv</p>
+        </div>
+    </main>
+    
+
 
 <div class="bottom">
     <div class="bottom-section">
