@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="{{ asset('css/support.css') }}">
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
@@ -26,79 +27,7 @@
         rel="stylesheet">
     <title>Atari800</title>
 
-    <style>
-        .scheduler {
-            margin: 20px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-        }
 
-        .title_alarm {
-            padding: 10px;
-            padding-left: 50px;
-            font-size: 25px;
-            color: #0E3386;
-            text-align: left;
-        }
-
-        .table_alarm {
-            background: rgb(135, 148, 232);
-            color: rgb(0, 0, 0);
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px;
-
-        }
-
-
-        .table_alarm th,
-        .table_alarm td {
-            padding: 12px;
-            text-align: left;
-            border: 1px solid #ddd;
-        }
-
-        .table_alarm th {
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        .table_alarm tr:hover {
-            background-color: #4446b1;
-        }
-
-
-        .alarm_button {
-            display: inline-block;
-            padding: 10px;
-            font-size: 17px;
-            font-weight: 400;
-            text-align: center;
-            white-space: nowrap;
-            border: 1px solid #007bff;
-            color: white;
-            background-color: #0E3386;
-            border-radius: 20px;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin: 20px;
-        }
-
-        .alarm_button:hover {
-            background-color: beige;
-            color: blue;
-            border-radius: 20px;
-
-        }
-
-        .al {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between
-        }
-    </style>
 
 
 </head>

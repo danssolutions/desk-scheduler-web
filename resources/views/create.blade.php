@@ -5,63 +5,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ asset('css/support.css') }}">
+
     <title>Atarii800</title>
-
-    <style>
-        .scheduler {
-            margin: 20px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-        }
-
-
-        .form_alarm {
-            background: rgb(135, 148, 232);
-            color: rgb(249, 249, 251);
-            padding: 20px;
-            margin: 20px;
-            border-radius: 10px;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        .alarm_button {
-            display: inline-block;
-            padding: 10px;
-            font-size: 17px;
-            font-weight: 400;
-            text-align: center;
-            white-space: nowrap;
-            border: 1px solid #007bff;
-            color: white;
-            background-color: #0E3386;
-            border-radius: 20px;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            margin: 10px 0;
-        }
-
-        .alarm_button:hover {
-            background-color: beige;
-            color: blue;
-        }
-
-        .title_alarm {
-            padding: 10px;
-            padding-left: 50px;
-            font-size: 25px;
-            color: #0E3386;
-            text-align: left;
-        }
-    </style>
 
 </head>
 
