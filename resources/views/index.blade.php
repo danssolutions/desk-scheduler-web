@@ -47,9 +47,8 @@
                     <th>Tables</th>
                     <th>Height</th>
                     <th>Time_from</th>
-                    <th>Time_to</th>
-                    <th>Week_start</th>
-                    <th>Week_end</th>
+                    <th>Days</th>
+
                     <th>Alarm_sound</th>
 
                     <th>Update</th>
@@ -64,9 +63,7 @@
                         <td>{{ $post->tables }}</td>
                         <td>{{ $post->height }}</td>
                         <td>{{ $post->time_from }}</td>
-                        <td>{{ $post->time_to }}</td>
-                        <td>{{ $post->week_start }}</td>
-                        <td>{{ $post->week_end }}</td>
+                        <td>{{ $post->days }}</td>
                         <td>{{ $post->alarm_sound }}</td>
                         <td>
                             <form action="/edit/{{ $post->id }}" method="get">
@@ -97,6 +94,38 @@
     </div>
     @include('notify::components.notify')
     @notifyJs
+    <div class="bottom">
+        <div class="bottom-section">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Privacy policy</a></li>
+                <li><a href="#">Affiliate program</a></li>
+            </ul>
+        </div>
+        <div class="bottom-section">
+            <h4>Help</h4>
+            <ul>
+                <li><a href="#">Q&A</a></li>
+                <li><a href="#">Sign up</a></li>
+            </ul>
+        </div>
+        <div class="bottom-section">
+            <h4>Contact us</h4>
+            <ul>
+                <li>Alsion 2, 6400 Sønderborg</li>
+                <li>Telephone: 6550 1160</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="end">
+        <footer>
+            <marquee>
+                <p>©2024 Made by Group 7 | All Rights Reserved</p>
+            </marquee>
+        </footer>
+    </div>
 </body>
 
 </html>

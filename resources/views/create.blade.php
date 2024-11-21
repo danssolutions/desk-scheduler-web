@@ -20,7 +20,7 @@
                 @csrf
                 <input type="text" name="name" class="form-control" placeholder="Name" required>
 
-                <select name="tables" class="form-control" required>
+                <select name="tables[]" class="form-control" required multiple>
                     <option value="">Please choose your table</option>
                     <option value="Table_0">Table-O: Jane Doe</option>
                     <option value="Table_1">Table_1: Daniel Vacas Crespo</option>
@@ -36,9 +36,15 @@
 
 
                 <input type="time" name="time_from" class="form-control" placeholder="Time_from" required>
-                <input type="time" name="time_to" class="form-control" placeholder="Time_to" required>
-                <input type="week" name="week_start" class="form-control" placeholder="Week_start" required>
-                <input type="week" name="week_end" class="form-control" placeholder="Week_end" required>
+                <select name="days[]" multiple>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                    <option value="Sunday">Sunday</option>
+                </select>
 
                 <select name="alarm_sound" class="form-control" required>
                     <option value="">Please choose alarm sound</option>

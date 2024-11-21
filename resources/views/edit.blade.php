@@ -45,12 +45,19 @@
 
                 <input value="{{ $posts->time_from }}" type="time" name="time_from" class="form-control"
                     placeholder="Time_from">
-                <input value="{{ $posts->time_to }}" type="time" name="time_to" class="form-control"
-                    placeholder="Time_to">
-                <input value="{{ $posts->week_start }}" type="week" name="week_start" class="form-control"
-                    placeholder="Week_start">
-                <input value="{{ $posts->week_end }}" type="week" name="week_end" class="form-control"
-                    placeholder="Week_end">
+
+                <select name="days" class="form-control">
+                    <option value="">Please choose your day</option>
+                    <option value="Monday" {{ $posts->days == 'Monday' ? 'selected' : '' }}>Monday</option>
+                    <option value="Tuesday" {{ $posts->days == 'Tuesday' ? 'selected' : '' }}>Tuesday</option>
+                    <option value="Wednesday" {{ $posts->days == 'Wednesday' ? 'selected' : '' }}>Wednesday</option>
+                    <option value="Thursday" {{ $posts->days == 'Thursday' ? 'selected' : '' }}>Thursday</option>
+                    <option value="Friday" {{ $posts->days == 'Friday' ? 'selected' : '' }}>Friday</option>
+                    <option value="Saturday" {{ $posts->days == 'Saturday' ? 'selected' : '' }}>Saturday</option>
+                    <option value="Sunday" {{ $posts->days == 'Sunday' ? 'selected' : '' }}>Sunday</option>
+                </select>
+
+
 
                 <select name="alarm_sound" class="form-control">
                     <option value="">Please choose alarm sound</option>

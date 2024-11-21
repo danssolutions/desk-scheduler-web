@@ -26,23 +26,18 @@ class PostController extends Controller
     {
         $request->validate([
             'name' => 'required|string',
-            'tables' => 'required|string',
+            'tables' => 'required|array',
             'height' => 'required|integer',
             'time_from' => 'required|string',
-            'time_to' => 'required|string',
-            'week_start' => 'required|string',
-            'week_end' => 'required|string',
+            'days' => 'required|array',
             'alarm_sound' => 'required|string',
         ]);
 
         $post = new Post([
             "name" => $request->name,
-            "tables" => $request->input('tables'),
-            'height' => $request->height,
+"tables" => json_encode($request->input('tables')),            'height' => $request->height,
             "time_from" => $request->time_from,
-            "time_to" => $request->time_to,
-            "week_start" => $request->week_start,
-            "week_end" => $request->week_end,
+"days" => json_encode($request->days),
             "alarm_sound" => $request->alarm_sound,
         ]);
         $post->save();
@@ -70,9 +65,7 @@ class PostController extends Controller
             'tables' => 'required|string',
             'height'=>'required|integer',
             'time_from' => 'required|string',
-            'time_to' => 'required|string',
-            'week_start' => 'required|string',
-            'week_end' => 'required|string',
+            'days' => 'required|string',
             'alarm_sound' => 'required|string',
         ]);
 
@@ -83,9 +76,7 @@ class PostController extends Controller
             'tables', 
             'height',
             'time_from', 
-            'time_to', 
-            'week_start', 
-            'week_end', 
+            'days', 
             'alarm_sound'
         ]));
 

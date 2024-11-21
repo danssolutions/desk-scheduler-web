@@ -469,9 +469,9 @@ body {
     text-align: left;
 }
 
-/* create page*/
+/* index page*/
 .scheduler {
-    margin: 20px;
+    margin: 20px auto;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -491,7 +491,7 @@ body {
     width: 100%;
     border-collapse: collapse;
     margin: 20px;
-
+    overflow-x: auto;
 }
 
 
@@ -499,18 +499,25 @@ body {
 .table_alarm td {
     padding: 12px;
     text-align: left;
+    white-space: nowrap;
     border: 1px solid #ddd;
 }
 
 .table_alarm th {
     background-color: #f4f4f4;
     color: #333;
+    width: 40px;
 }
 
 .table_alarm tr:hover {
     background-color: #4446b1;
+    transition: background-color 0.3s ease;
+
 }
 
+.table-container {
+    overflow-x: auto;
+}
 
 .alarm_button {
     display: inline-block;

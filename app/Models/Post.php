@@ -14,14 +14,13 @@ protected $primaryKey="id";
         'tables',
         'height',
         'time_from',
-        'time_to',
-        'week_start',
-        'week_end',
+        'days',
         'alarm_sound',
     ];
 
     protected $casts = [
         'tables' => 'array', 
+        'days'=> 'array',
     ];
     
 }
