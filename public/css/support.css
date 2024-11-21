@@ -414,13 +414,13 @@ body {
 
 .title_alarm {
     padding: 10px;
-    padding-left: 50px;
     font-size: 25px;
     color: #0E3386;
     text-align: left;
 }
 
 .table_alarm {
+    margin-top: 20px;
     background: rgb(135, 148, 232);
     color: rgb(0, 0, 0);
     width: 100%;
@@ -455,8 +455,9 @@ body {
 
 
 
-.alarm_button {
-    display: inline-block;
+button.alarm_button {
+    all: unset;
+    display: flex;
     padding: 10px 15px;
     font-size: 17px;
     font-weight: 400;
@@ -466,23 +467,28 @@ body {
     color: white;
     background-color: #0E3386;
     border-radius: 20px;
-    text-decoration: none;
     cursor: pointer;
     transition: all 0.3s ease;
     box-sizing: border-box;
 }
 
-.alarm_button:hover {
+button.alarm_button:hover {
     background-color: beige;
     color: blue;
-    border-radius: 20px;
-
 }
 
 .al {
     display: flex;
+    align-items: center;
     flex-direction: row;
-    justify-content: space-between
+    width: 100%;
+    justify-content: space-between;
+}
+
+#addalarmbtn {
+    right: 0;
+    text-decoration: none;
+    margin-left: auto;
 }
 
 

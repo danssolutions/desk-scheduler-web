@@ -40,7 +40,7 @@
     <div class="scheduler">
         <div class="al">
             <h3 class="title_alarm">Scheduler - place where you can schedule height of your tables.</h3>
-            <a href="/create"><button class="alarm_button">Add New Alarm</button></a>
+            <a href="/create"><button id="addalarmbtn" class="alarm_button">Add New Alarm</button></a>
         </div>
         <table class="table_alarm">
             <thead>

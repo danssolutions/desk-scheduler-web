@@ -62,23 +62,23 @@ class PostController extends Controller
     {
         $request->validate([
             'name' => 'required|string',
-            'tables' => 'required|string',
+            'tables' => 'required|array',
             'height'=>'required|integer',
             'time_from' => 'required|string',
-            'days' => 'required|string',
+            'days' => 'required|array',
             'alarm_sound' => 'required|string',
         ]);
 
         $post = Post::findOrFail($id);
 
-        $post->update($request->only([
-            'name', 
-            'tables', 
-            'height',
-            'time_from', 
-            'days', 
-            'alarm_sound'
-        ]));
+        $post->update([
+            'name' => $request->name,
+            'tables' => json_encode($request->tables),  
+            'height' => $request->height,
+            'time_from' => $request->time_from,
+            'days' => json_encode($request->days),  
+            'alarm_sound' => $request->alarm_sound,
+        ]);
 
         notify()->success('Alarm updated successfully!');
 
