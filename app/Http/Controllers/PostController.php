@@ -35,11 +35,13 @@ class PostController extends Controller
 
         $post = new Post([
             "name" => $request->name,
-"tables" => json_encode($request->input('tables')),            'height' => $request->height,
+            "tables" => json_encode($request->input('tables')),
+            "height" => $request->height,
             "time_from" => $request->time_from,
-"days" => json_encode($request->days),
+            "days" => json_encode($request->days),
             "alarm_sound" => $request->alarm_sound,
         ]);
+        
         $post->save();
 
         return redirect("/");

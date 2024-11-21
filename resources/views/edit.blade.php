@@ -21,22 +21,38 @@
                     placeholder="Name">
 
                 <select name="tables[]" class="form-control-multiple" multiple>
-                    <option value="Table_0" {{ in_array('Table_0', explode(',', $posts->tables)) ? 'selected' : '' }}>
-                        Table-O: Jane Doe</option>
-                    <option value="Table_1" {{ in_array('Table_1', explode(',', $posts->tables)) ? 'selected' : '' }}>
-                        Table_1: Daniel Vacas Crespo</option>
-                    <option value="Table_2" {{ in_array('Table_2', explode(',', $posts->tables)) ? 'selected' : '' }}>
-                        Table_2: Mickey Mouse</option>
-                    <option value="Table_3" {{ in_array('Table_3', explode(',', $posts->tables)) ? 'selected' : '' }}>
-                        Table_3: Spiderman</option>
-                    <option value="Table_4" {{ in_array('Table_4', explode(',', $posts->tables)) ? 'selected' : '' }}>
-                        Table_4: Jan Kowal</option>
-                    <option value="Table_5" {{ in_array('Table_5', explode(',', $posts->tables)) ? 'selected' : '' }}>
-                        Table_5: Sabrina Carpenter</option>
-                    <option value="Table_6" {{ in_array('Table_6', explode(',', $posts->tables)) ? 'selected' : '' }}>
-                        Table_6: XYZ</option>
-                    <option value="Table_7" {{ in_array('Table_7', explode(',', $posts->tables)) ? 'selected' : '' }}>
-                        Table_7: Boss</option>
+                    <option value="Table_0"
+                        {{ in_array('Table_0', json_decode($posts->tables) ?: []) ? 'selected' : '' }}>
+                        Table-O: Jane Doe
+                    </option>
+                    <option value="Table_1"
+                        {{ in_array('Table_1', json_decode($posts->tables) ?: []) ? 'selected' : '' }}>
+                        Table_1: Daniel Vacas Crespo
+                    </option>
+                    <option value="Table_2"
+                        {{ in_array('Table_2', json_decode($posts->tables) ?: []) ? 'selected' : '' }}>
+                        Table_2: Mickey Mouse
+                    </option>
+                    <option value="Table_3"
+                        {{ in_array('Table_3', json_decode($posts->tables) ?: []) ? 'selected' : '' }}>
+                        Table_3: Spiderman
+                    </option>
+                    <option value="Table_4"
+                        {{ in_array('Table_4', json_decode($posts->tables) ?: []) ? 'selected' : '' }}>
+                        Table_4: Jan Kowal
+                    </option>
+                    <option value="Table_5"
+                        {{ in_array('Table_5', json_decode($posts->tables) ?: []) ? 'selected' : '' }}>
+                        Table_5: Sabrina Carpenter
+                    </option>
+                    <option value="Table_6"
+                        {{ in_array('Table_6', json_decode($posts->tables) ?: []) ? 'selected' : '' }}>
+                        Table_6: XYZ
+                    </option>
+                    <option value="Table_7"
+                        {{ in_array('Table_7', json_decode($posts->tables) ?: []) ? 'selected' : '' }}>
+                        Table_7: Boss
+                    </option>
                 </select>
 
 
@@ -46,23 +62,26 @@
                 <input value="{{ $posts->time_from }}" type="time" name="time_from" class="form-control"
                     placeholder="Time_from">
 
+
                 <select name="days[]" class="form-control-multiple" multiple>
-                    <option value="Monday" {{ in_array('Monday', explode(',', $posts->days)) ? 'selected' : '' }}>
+                    <option value="Monday" {{ in_array('Monday', json_decode($posts->days) ?: []) ? 'selected' : '' }}>
                         Monday</option>
-                    <option value="Tuesday" {{ in_array('Tuesday', explode(',', $posts->days)) ? 'selected' : '' }}>
-                        Tuesday</option>
+                    <option value="Tuesday"
+                        {{ in_array('Tuesday', json_decode($posts->days) ?: []) ? 'selected' : '' }}>Tuesday</option>
                     <option value="Wednesday"
-                        {{ in_array('Wednesday', explode(',', $posts->days)) ? 'selected' : '' }}>
-                        Wednesday</option>
-                    <option value="Thursday" {{ in_array('Thursday', explode(',', $posts->days)) ? 'selected' : '' }}>
-                        Thursday</option>
-                    <option value="Friday" {{ in_array('Friday', explode(',', $posts->days)) ? 'selected' : '' }}>
+                        {{ in_array('Wednesday', json_decode($posts->days) ?: []) ? 'selected' : '' }}>Wednesday
+                    </option>
+                    <option value="Thursday"
+                        {{ in_array('Thursday', json_decode($posts->days) ?: []) ? 'selected' : '' }}>Thursday</option>
+                    <option value="Friday" {{ in_array('Friday', json_decode($posts->days) ?: []) ? 'selected' : '' }}>
                         Friday</option>
-                    <option value="Saturday" {{ in_array('Saturday', explode(',', $posts->days)) ? 'selected' : '' }}>
-                        Saturday</option>
-                    <option value="Sunday" {{ in_array('Sunday', explode(',', $posts->days)) ? 'selected' : '' }}>
+                    <option value="Saturday"
+                        {{ in_array('Saturday', json_decode($posts->days) ?: []) ? 'selected' : '' }}>Saturday</option>
+                    <option value="Sunday" {{ in_array('Sunday', json_decode($posts->days) ?: []) ? 'selected' : '' }}>
                         Sunday</option>
                 </select>
+
+
 
 
                 <select name="alarm_sound" class="form-control">
