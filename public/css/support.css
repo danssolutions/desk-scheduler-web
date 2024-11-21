@@ -321,6 +321,7 @@ body {
     background-color: white;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 .team {
@@ -508,4 +509,5 @@ button.alarm_button:hover {
     justify-content: center;
     gap: 10px;
     padding: 10px;
+    margin-top: 11px;
 }
