@@ -363,7 +363,6 @@ body {
 
 /*stuff for the create page */
 .scheduler {
-    margin: auto;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -373,7 +372,6 @@ body {
     background: rgb(135, 148, 232);
     color: rgb(249, 249, 251);
     padding: 20px;
-    margin: 20px;
     border-radius: 10px;
 }
 
