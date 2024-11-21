@@ -18,9 +18,9 @@
         <div class="form_alarm">
             <form action="/post" method="post" enctype="multipart/form-data">
                 @csrf
-                <input type="text" name="name" class="form-control" placeholder="Name" required>
+                <input id="name" type="text" name="name" class="form-control" placeholder="Name" required>
 
-                <select name="tables[]" class="form-control-multiple" required multiple>
+                <select id="tables" name="tables[]" class="form-control-multiple" required multiple>
                     <option value="">Please choose your table</option>
                     <option value="Table_0">Table-O: Jane Doe</option>
                     <option value="Table_1">Table_1: Daniel Vacas Crespo</option>
@@ -31,12 +31,13 @@
                     <option value="Table_6">Table_6: XYZ</option>
                     <option value="Table_7">Table_7: Boss</option>
                 </select>
-                <input type="number" name="height" class="form-control" placeholder="Height" min="660"
-                    max="1320" required>
+                <input type="number" id="height" name="height" class="form-control" placeholder="Height"
+                    min="660" max="1320" required>
 
 
-                <input type="time" name="time_from" class="form-control" placeholder="Time_from" required>
-                <select name="days[]" multiple>
+                <input type="time" id="time_from" name="time_from" class="form-control" placeholder="Time_from"
+                    required>
+                <select id="days" name="days[]" multiple>
                     <option value="Monday">Monday</option>
                     <option value="Tuesday">Tuesday</option>
                     <option value="Wednesday">Wednesday</option>
@@ -46,17 +47,20 @@
                     <option value="Sunday">Sunday</option>
                 </select>
 
-                <select name="alarm_sound" class="form-control-multiple" required>
+                <select id="alarm_sound" name="alarm_sound" class="form-control-multiple" required>
                     <option value="">Please choose alarm sound</option>
                     <option value="Bip">Bip</option>
                     <option value="Beeze">Beeze</option>
                     <option value="Brr">Brr</option>
                 </select>
 
-                <button type="submit" class="alarm_button">Submit</button>
+                <button type="submit" class="alarm_button" onclick="scheduleReminder();">Submit</button>
             </form>
         </div>
     </div>
+
+    <audio src="" id="notificationSound"></audio>
+    <script src="{{ asset('js/support.js') }}"></script>
 
 </body>
 

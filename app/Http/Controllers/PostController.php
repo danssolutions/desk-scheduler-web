@@ -6,6 +6,7 @@ use notify;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
+use Carbon\Carbon;
 
 class PostController extends Controller
 {
@@ -94,4 +95,29 @@ class PostController extends Controller
         $post->delete();
         return back();
     }
-}
+   /* public function notificationdesk($id)
+    {
+
+        $currentDay = Carbon::now()->format('l');        
+        $currentTime = Carbon::now();
+        
+        $timeWindowStart = $currentTime->copy()->subMinutes(1)->format('H:i');
+        $timeWindowEnd = $currentTime->copy()->addMinutes(1)->format(format: 'H:i');
+        
+        // Fetch records where the day matches and the time_from is near the current time
+        $posts = Post::table('posts')
+            ->whereJsonContains('days', $currentDay)
+            ->whereTime('time_from', '>=', $timeWindowStart)
+            ->whereTime('time_from', '<=', $timeWindowEnd)
+            ->get();
+
+
+
+            foreach ($posts as $post) {
+                notify()->success('Your desk will move soon. ⚡️');
+            }
+        
+            return response()->json(['message' => 'Desk notifications checked.']);
+        }
+            */
+    }
