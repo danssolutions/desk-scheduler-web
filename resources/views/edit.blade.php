@@ -20,7 +20,7 @@
                 <input value="{{ $posts->name }}" type="text" name="name" class="form-control"
                     placeholder="Name">
 
-                <select name="tables[]" class="form-control" multiple>
+                <select name="tables[]" class="form-control-multiple" multiple>
                     <option value="Table_0" {{ in_array('Table_0', explode(',', $posts->tables)) ? 'selected' : '' }}>
                         Table-O: Jane Doe</option>
                     <option value="Table_1" {{ in_array('Table_1', explode(',', $posts->tables)) ? 'selected' : '' }}>
@@ -46,7 +46,7 @@
                 <input value="{{ $posts->time_from }}" type="time" name="time_from" class="form-control"
                     placeholder="Time_from">
 
-                <select name="days[]" class="form-control" multiple>
+                <select name="days[]" class="form-control-multiple" multiple>
                     <option value="Monday" {{ in_array('Monday', explode(',', $posts->days)) ? 'selected' : '' }}>
                         Monday</option>
                     <option value="Tuesday" {{ in_array('Tuesday', explode(',', $posts->days)) ? 'selected' : '' }}>

@@ -20,7 +20,7 @@
                 @csrf
                 <input type="text" name="name" class="form-control" placeholder="Name" required>
 
-                <select name="tables[]" class="form-control" required multiple>
+                <select name="tables[]" class="form-control-multiple" required multiple>
                     <option value="">Please choose your table</option>
                     <option value="Table_0">Table-O: Jane Doe</option>
                     <option value="Table_1">Table_1: Daniel Vacas Crespo</option>
@@ -46,7 +46,7 @@
                     <option value="Sunday">Sunday</option>
                 </select>
 
-                <select name="alarm_sound" class="form-control" required>
+                <select name="alarm_sound" class="form-control-multiple" required>
                     <option value="">Please choose alarm sound</option>
                     <option value="Bip">Bip</option>
                     <option value="Beeze">Beeze</option>
