@@ -6,27 +6,34 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="stylesheet" href="{{ asset('css/support.css') }}">
-
-
-    <!-- Include Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
-        rel="stylesheet">
-    <title>Atari800</title>
-
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{ asset('images/logo.png') }}" type="image/x-icon">
+    
+    <!-- Include Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <title>SCHEDULER</title>
 
 
 
 </head>
 
 <body>
+    <div class="container">
+        <div class="logo">
+            <img src="https://img.icons8.com/quill/100/228BE6/galaxy.png" alt="Home" />
+            <h1>Atari800</h1>
+        </div>
+        <div class="profile-menu">
+            <img src="{{ asset('images/profile.png') }}" alt="Profile" onclick="toggleDropdown()">
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="/profile">Profile</a>
+                <a href="/settings">Settings</a>
+            </div>
+        </div>
+    </div>
     @notifyCss
     <div class="scheduler">
         <div class="al">
@@ -120,6 +127,7 @@
             </marquee>
         </footer>
     </div>
+<script src="{{ asset('js/support.js') }}"></script>
 </body>
 
 </html>

@@ -5,11 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/support.css') }}">
-
-    <title>Test</title>
+    <link rel="stylesheet" href="{{ asset('css/support.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{ asset('images/logo.png') }}" type="image/x-icon">
+    <title>ABOUT</title>
 </head>
 
 <body>
+    <div class="container">
+        <div class="logo">
+            <img src="https://img.icons8.com/quill/100/228BE6/galaxy.png" alt="Home" />
+            <h1>Atari800</h1>
+        </div>
+        <div class="profile-menu">
+            <img src="{{ asset('images/profile.png') }}" alt="Profile" onclick="toggleDropdown()">
+            <div class="dropdown-menu" id="dropdownMenu">
+                <a href="/profile">Profile</a>
+                <a href="/settings">Settings</a>
+            </div>
+        </div>
+    </div>
 
     <div class="team">
 
@@ -73,6 +90,7 @@
     </div>
 
     <script src="./app.js"></script>
+    <script src="{{ asset('js/support.js') }}"></script>
 </body>
 
 </html>

@@ -6,8 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ asset('css/support.css') }}">
-
-    <title>Atarii800</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="{{ asset('images/logo.png') }}" type="image/x-icon">
+    <title>SCHEDULER</title>
 
 </head>
 
@@ -57,6 +60,40 @@
                 <button type="submit" class="alarm_button" onclick="scheduleReminder();">Submit</button>
             </form>
         </div>
+    </div>
+
+
+    <div class="bottom">
+        <div class="bottom-section">
+            <h4>Company</h4>
+            <ul>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Privacy policy</a></li>
+                <li><a href="#">Affiliate program</a></li>
+            </ul>
+        </div>
+        <div class="bottom-section">
+            <h4>Help</h4>
+            <ul>
+                <li><a href="#">Q&A</a></li>
+                <li><a href="#">Sign up</a></li>
+            </ul>
+        </div>
+        <div class="bottom-section">
+            <h4>Contact us</h4>
+            <ul>
+                <li>Alsion 2, 6400 Sønderborg</li>
+                <li>Telephone: 6550 1160</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="end">
+        <footer>
+            <marquee>
+                <p>©2024 Made by Group 7 | All Rights Reserved</p>
+            </marquee>
+        </footer>
     </div>
 
     <audio src="" id="notificationSound"></audio>
