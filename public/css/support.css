@@ -319,6 +319,8 @@ footer marquee {
 /* stuff for thevabout page*/
 body {
     background-color: white;
+    margin: 0;
+    padding: 0;
 }
 
 .team {
@@ -361,12 +363,11 @@ body {
 
 /*stuff for the create page */
 .scheduler {
-    margin: 20px;
+    margin: auto;
     padding: 20px;
     display: flex;
     flex-direction: column;
 }
-
 
 .form_alarm {
     background: rgb(135, 148, 232);
@@ -376,60 +377,8 @@ body {
     border-radius: 10px;
 }
 
-.form-control {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
-
-.alarm_button {
-    display: inline-block;
-    padding: 10px;
-    font-size: 17px;
-    font-weight: 400;
-    text-align: center;
-    white-space: nowrap;
-    border: 1px solid #007bff;
-    color: white;
-    background-color: #0E3386;
-    border-radius: 20px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin: 10px 0;
-}
-
-.alarm_button:hover {
-    background-color: beige;
-    color: blue;
-}
-
-.title_alarm {
-    padding: 10px;
-    padding-left: 50px;
-    font-size: 25px;
-    color: #0E3386;
-    text-align: left;
-}
 
 /* stuff for the edit page*/
-.scheduler {
-    margin: 20px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-
-.form_alarm {
-    background: rgb(135, 148, 232);
-    color: rgb(249, 249, 251);
-    padding: 20px;
-    margin: 20px;
-    border-radius: 10px;
-}
 
 .alarm_button {
     display: inline-block;
@@ -459,23 +408,9 @@ body {
     margin: 10px 0;
     border: 1px solid #ddd;
     border-radius: 5px;
-}
-
-.title_alarm {
-    padding: 10px;
-    padding-left: 50px;
-    font-size: 25px;
-    color: #0E3386;
-    text-align: left;
 }
 
 /* create page*/
-.scheduler {
-    margin: 20px auto;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-}
 
 .title_alarm {
     padding: 10px;
@@ -490,17 +425,20 @@ body {
     color: rgb(0, 0, 0);
     width: 100%;
     border-collapse: collapse;
-    margin: 20px;
-    overflow-x: auto;
+    overflow-x: hidden;
 }
 
 
 .table_alarm th,
 .table_alarm td {
     padding: 12px;
+    width: auto;
     text-align: left;
     white-space: nowrap;
     border: 1px solid #ddd;
+    box-sizing: border-box;
+    vertical-align: middle;
+    overflow: hidden;
 }
 
 .table_alarm th {
@@ -515,13 +453,11 @@ body {
 
 }
 
-.table-container {
-    overflow-x: auto;
-}
+
 
 .alarm_button {
     display: inline-block;
-    padding: 10px;
+    padding: 10px 15px;
     font-size: 17px;
     font-weight: 400;
     text-align: center;
@@ -533,7 +469,7 @@ body {
     text-decoration: none;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin: 20px;
+    box-sizing: border-box;
 }
 
 .alarm_button:hover {
@@ -547,4 +483,12 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between
+}
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
 }
