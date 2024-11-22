@@ -49,9 +49,7 @@
         <div class="member"><img class="member-image" src="{{ asset('images/maciej.jpg') }}" alt="Maciej"><br>
             <h3>Maciej Grasela</h3>
         </div>
-        <div class="dreamteam">
-            <h1>Dream Team</h1>
-        </div>
+
 
     </div>
 
