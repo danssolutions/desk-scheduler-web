@@ -17,7 +17,7 @@
     <div class="container">
         <div class="logo">
             <img src="https://img.icons8.com/quill/100/228BE6/galaxy.png" alt="Home" />
-            <h1>Atari800</h1>
+            <h1><a href="/main">Atari800</a></h1>
         </div>
         <div class="profile-menu">
             <img src="{{ asset('images/profile.png') }}" alt="Profile" onclick="toggleDropdown()">
