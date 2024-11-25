@@ -231,6 +231,11 @@ button[type="submit"]:hover
     background: #ffffff;
 }
 
+.right-section a
+{
+    color: inherit; 
+    text-decoration: none;
+}
 .btn 
 {
     margin: 10px 0;

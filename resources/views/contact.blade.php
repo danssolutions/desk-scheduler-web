@@ -20,16 +20,14 @@
         <div class="profile-menu">
             <img src="{{ asset('images/profile.png') }}" alt="Profile" onclick="toggleDropdown()">
             <div class="dropdown-menu" id="dropdownMenu">
-                <a href="/profile">Profile</a>
+                <a href="/profilepage">Profile</a>
                 <a href="/settings">Settings</a>
             </div>
         </div>
     </div>
 
 <main class="main-content">
-<section class="common">
-            <h1>CONTACT US</h1>
-</section>        
+<section class="common"></section>        
 <section class="contact-section">
         
         
@@ -60,7 +58,7 @@
     <div class="bottom-section">
         <h4>Company</h4>
         <ul>
-            <li><a href="#">About us</a></li>
+            <li><a href=".about">About us</a></li>
             <li><a href="#">Privacy policy</a></li>
             <li><a href="#">Affiliate program</a></li>
         </ul>

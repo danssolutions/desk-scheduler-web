@@ -8,8 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
     <title>MAIN</title>
-
-
 </head>
 
 <body>
@@ -21,32 +19,31 @@
         <div class="profile-menu">
             <img src="{{ asset('images/profile.png') }}" alt="Profile" onclick="toggleDropdown()">
             <div class="dropdown-menu" id="dropdownMenu">
-                <a href="/profile">Profile</a>
+                <a href="/profilepage">Profile</a>
                 <a href="/settings">Settings</a>
             </div>
         </div>
     </div>
 
 
-<main class="mainpage">
+<div class="mainpage">
         <div class="left-section">
             <img src="https://cdn.linak.com/-/media/images/applications/main/office-desks-application.jpg?bc=white&as=1&h=750&iar=0&w=750&rev=192b4a3e-9bb9-42e0-b2ca-f63814bde3fd&quality=75&hash=56726E8939B16A9A741900E86BF1CDC9" alt="Example Image" class="image">
-            <!--<p class="text">This is some text under the image.</p>-->
         </div>
         <div class="right-section">
-            <button class="btn">Profile</button>
-            <button class="btn">Scheduler</button>
-            <button class="btn">Analytics</button>
+            <button class="btn"><a href="/profilepage">Profile</a></button>
+            <button class="btn"><a href="/">Scheduler </a></button>
+            <button class="btn"><a href="/analytics">Analytics</a></button>
         </div>
     </div>
 
-</main>
+</div>
 
 <div class="bottom">
     <div class="bottom-section">
         <h4>Company</h4>
         <ul>
-            <li><a href="#">About us</a></li>
+            <li><a href="/about">About us</a></li>
             <li><a href="#">Privacy policy</a></li>
             <li><a href="#">Affiliate program</a></li>
         </ul>

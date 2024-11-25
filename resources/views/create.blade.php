@@ -67,7 +67,7 @@
         <div class="bottom-section">
             <h4>Company</h4>
             <ul>
-                <li><a href="#">About us</a></li>
+                <li><a href="/about">About us</a></li>
                 <li><a href="#">Privacy policy</a></li>
                 <li><a href="#">Affiliate program</a></li>
             </ul>
