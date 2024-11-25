@@ -28,6 +28,9 @@
         </div>
     </div>
 
+    <div class="dreamteam">
+        <h1 id="dream-team-title">Dream Team</h1>
+    </div>
     <div class="team">
 
 
@@ -40,6 +43,7 @@
         <div class="member"><img class="member-image" src="{{ asset('images/daniel.jpg') }}" alt="Daniel"><br>
             <h3>Daniel Vacas Crespo</h3>
         </div>
+
         <div class="member"><img class="member-image" src="{{ asset('images/dainius.png') }}" alt="Dainius"><br>
             <h3>Dainius Čeliauskas</h3>
         </div>
@@ -52,6 +56,7 @@
 
 
     </div>
+   
 
 
     <div class="bottom">
@@ -89,6 +94,10 @@
 
     <script src="./app.js"></script>
     <script src="{{ asset('js/support.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0"></script>
+
+
+
 </body>
 
 </html>

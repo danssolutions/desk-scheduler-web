@@ -33,7 +33,7 @@
             <div class="profile-image">
                 <img src="profile.jpg" alt="Profile Image">
             </div>
-            <h2 class="username"></br></br></br>loh</h2>
+            <h2 class="username"></br></br></br></br>loh</h2>
         </div>
 
         <div class="profile-details">

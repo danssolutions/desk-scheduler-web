@@ -376,6 +376,7 @@ body
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    background: #fff;
 }
 
 .team 
@@ -396,19 +397,18 @@ body
     align-items: center;
     margin: 10px;
     width: 100%;
-    border-radius: 15px;
-    background-color: #005B96;
     padding: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 
 .member-image 
 {
-    height: 200px;
+    height: 150px;
     width: 150px;
-    border-radius: 50px;
+    border-radius: 50%;
     object-fit: cover;
+    border: 2px solid #fff; /* Optional border for better aesthetics */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .dreamteam 
@@ -417,8 +417,18 @@ body
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin: 20px 0;
+    font-weight: bold;
+    font-size: 2rem;
+    color: #002e5b;
+    cursor: pointer; 
+    transition: color 0.2s ease;
 }
 
+.dreamteam:hover 
+{
+    color: #710404; /* Changes color on hover */
+}
 
 /* stuff for the edit page*/
 
