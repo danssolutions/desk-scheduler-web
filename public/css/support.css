@@ -282,8 +282,8 @@ button[type="submit"]:hover
 
 .profile-image img 
 {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     border-radius: 50%;
     border: 3px solid #002e5b;
@@ -293,14 +293,15 @@ button[type="submit"]:hover
 
 .username 
 {
-    font-size: 28px;
-    color: #333;
+    font-size: 36px;
+    color: #002e5b;
 }
 
 
 .profile-details p
 {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    margin-top:15px ;
 }
 
 .profile-details strong 
