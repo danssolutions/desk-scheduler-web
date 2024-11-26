@@ -41,6 +41,8 @@ document.getElementById('dream-team-title').addEventListener('click', function (
 });
 
 // javascript for chart
+import Chart from 'chart.js';
+
 document.addEventListener('DOMContentLoaded', function () {
     const ctx = document.getElementById('myChart').getContext('2d');
     let myChart;
@@ -97,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Attach event listeners to buttons
     document.querySelectorAll('.chart_types button').forEach(button => {
         button.addEventListener('click', function () {
-            const chartType = this.getAttribute('onclick').replace('setChartType(\'', '').replace('\')', '');
+            const chartType = this.getAttribute('data-chart-type'); // Fixed to use data-chart-type
             setChartType(chartType);
         });
     });

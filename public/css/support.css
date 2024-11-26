@@ -524,12 +524,7 @@ button.alarm_button:hover {
     margin-top: 10px;
 }
 
-.chart {
-    max-width: 900px;
-    height: 450px;
-    padding: 50px;
-    margin: 0 auto;
-}
+
 
 .chart .chart_types {
     text-align: center;
@@ -539,4 +534,15 @@ button.alarm_button:hover {
 
 .chart .chart_types button {
     padding: 20px;
+}
+
+.chart {
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+
+#myChart {
+    width: 100%;
+    height: 100%;
 }
