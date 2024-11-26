@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ asset('css/support.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/support.css') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -19,6 +18,7 @@
 
 <body>
     <div class="container">
+        <!-- Logo and Profile Menu -->
         <div class="logo">
             <img src="https://img.icons8.com/quill/100/228BE6/galaxy.png" alt="Home" />
             <h1><a href="/main">Atari800</a></h1>
@@ -32,72 +32,44 @@
         </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <!-- Main Content -->
     <div class="container">
         <div class="card">
-
-            <div class="card-header"></div>
-
+            <div class="card-header">
+                <h5>Chart Analytics</h5>
+            </div>
             <div class="card_body">
-
-                <div>
-                    <canvas id="myChart" style="width: 400px;"></canvas>
-                </div>
-
-                <script>
-                    const ctx = document.getElementById('myChart');
-                    const labels = {!! json_encode($labels) !!};
-                    const data = {!! json_encode($data) !!};
-
-
-                    new Chart(ctx, {
-                        type: 'bar',
-                        data: {
-                            labels: labels,
-                            datasets: [{
-                                label: '# Height',
-                                data: data,
-                                borderWidth: 1
-                            }]
-                        },
-                        options: {
-                            scales: {
-                                y: {
-                                    beginAtZero: true
-                                }
-                            }
-                        }
-                    });
-                </script>
+                <canvas id="myChart"></canvas>
             </div>
         </div>
     </div>
 
+    <script>
+        const ctx = document.getElementById('myChart');
+        const labels = {!! json_encode($labels) !!};
+        const data = {!! json_encode($data) !!};
 
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: '# Height',
+                    data: data,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
 
-
-
-
-
-
-
-
-
-
-
-
+    <!-- Footer Section -->
     <div class="bottom">
         <div class="bottom-section">
             <h4>Company</h4>
@@ -123,19 +95,14 @@
         </div>
     </div>
 
-    <div class="end">
-        <footer>
-            <marquee>
-                <p>©2024 Made by Group 7 | All Rights Reserved</p>
-            </marquee>
-        </footer>
-    </div>
+    <footer>
+        <marquee class="marquee">
+            <p>©2024 Made by Group 7 | All Rights Reserved</p>
+        </marquee>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="{{ asset('js/support.js') }}"></script>
-
-
-
-
 </body>
 
 </html>
