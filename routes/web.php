@@ -20,7 +20,7 @@ Route::get('/contact', [ContactController::class, 'showContactForm'])->name('con
 Route::post('/contact', [ContactController::class, 'sendEmail'])->name('contact.send');
 Route::get('/about', function () {return view('about'); });
 Route::get('/dashboard', function () {return view('dashboard');})->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/show/graph',[ChartController::class,'loadGraphPage']);
+Route::get('/graph',[ChartController::class,'loadGraphPage']);
 
 
 Route::middleware('auth')->group(function () {

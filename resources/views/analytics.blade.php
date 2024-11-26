@@ -11,8 +11,6 @@
     <link rel="icon" href="{{ asset('images/logo.png') }}" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>ANALYTICS</title>
 </head>
 
@@ -32,42 +30,12 @@
         </div>
     </div>
 
-    <!-- Main Content -->
-    <div class="container">
-        <div class="card">
-            <div class="card-header">
-                <h5>Chart Analytics</h5>
-            </div>
-            <div class="card_body">
-                <canvas id="myChart"></canvas>
-            </div>
-        </div>
+
+    <div class="card_body">
+        <canvas id="myChart"></canvas>
     </div>
 
-    <script>
-        const ctx = document.getElementById('myChart');
-        const labels = {!! json_encode($labels) !!};
-        const data = {!! json_encode($data) !!};
 
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: '# Height',
-                    data: data,
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    </script>
 
     <!-- Footer Section -->
     <div class="bottom">
@@ -103,6 +71,30 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="{{ asset('js/support.js') }}"></script>
+    <script>
+        const ctx = document.getElementById('myChart');
+        const labels = {!! json_encode($labels) !!};
+        const data = {!! json_encode($data) !!};
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: '# Height',
+                    data: data,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
