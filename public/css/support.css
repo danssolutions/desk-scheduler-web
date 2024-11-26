@@ -1,5 +1,4 @@
-* 
-{
+* {
     margin: 0;
     padding: 0;
     font-family: 'Ubuntu', sans-serif;
@@ -9,66 +8,58 @@
 
 
 /*stuff for header*/
-.container 
-{
+.container {
     background-color: #002e5b;
-    display: flex; 
+    display: flex;
     justify-content: space-between;
-    align-items: center; 
-    padding: 0 20px; 
+    align-items: center;
+    padding: 0 20px;
     height: 70px;
     width: 100%;
 }
 
-.logo 
-{
+.logo {
     display: flex;
     align-items: center;
 }
 
-.logo a
-{
-    color: inherit; 
+.logo a {
+    color: inherit;
     text-decoration: none;
 }
 
-.logo img 
-{
+.logo img {
     width: 50px;
     height: 50px;
     margin-right: 10px;
 }
 
-.logo h1 
-{
+.logo h1 {
     color: #fff;
-    font-size: 20px; 
+    font-size: 20px;
     margin: 0;
 }
 
-.profile-menu 
-{
+.profile-menu {
     position: relative;
     display: flex;
     align-items: center;
     margin-left: auto;
 }
 
-.profile-menu img 
-{
+.profile-menu img {
     width: 55px;
     height: 55px;
     border-radius: 50%;
     cursor: pointer;
 }
 
-.dropdown-menu 
-{
+.dropdown-menu {
     display: none;
     position: absolute;
     right: 0;
     top: 100%;
-    background-color:#00152a;
+    background-color: #00152a;
     color: #f1f1f1dc;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     min-width: 150px;
@@ -77,8 +68,7 @@
     overflow: hidden;
 }
 
-.dropdown-menu a 
-{
+.dropdown-menu a {
     display: block;
     padding: 10px;
     color: #e9e8e8e8;
@@ -86,8 +76,7 @@
     font-size: 14px;
 }
 
-.dropdown-menu a:hover 
-{
+.dropdown-menu a:hover {
     background-color: #000f1e;
 }
 
@@ -96,15 +85,13 @@
 
 
 /*stuff for contact page*/
-.main-content 
-{
+.main-content {
     background: linear-gradient(to bottom, #002e5b, #f9f9f9);
     min-height: 75vh;
     width: 100%;
 }
 
-.common 
-{
+.common {
     width: 50%;
     position: relative;
     padding-left: 33%;
@@ -114,15 +101,13 @@
     margin: auto;
 }
 
-.common h1 
-{
+.common h1 {
     font-size: 30px;
     color: #faf9f9;
     padding: 30px;
 }
 
-.contact-section 
-{
+.contact-section {
     max-width: 475px;
     margin: auto;
     padding: 20px;
@@ -134,35 +119,30 @@
 
 }
 
-.form-group 
-{
+.form-group {
     margin-bottom: 15px;
 }
 
-.form-group label 
-{
+.form-group label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
 }
 
 .form-group input,
-.form-group textarea 
-{
+.form-group textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 2px;
 }
 
-.form-group textarea 
-{
+.form-group textarea {
     resize: vertical;
     min-height: 100px;
 }
 
-button[type="submit"] 
-{
+button[type="submit"] {
     display: block;
     width: 100%;
     padding: 10px;
@@ -174,22 +154,19 @@ button[type="submit"]
 
 }
 
-button[type="submit"]:hover 
-{
+button[type="submit"]:hover {
     background-color: #710404;
     transition: border-left-color 0.2s ease;
 }
 
-.success-message 
-{
+.success-message {
     color: #002e5b;
     text-align: center;
     margin-bottom: 5px;
 }
 
 /*stuff for main page*/
-.mainpage 
-{
+.mainpage {
     display: flex;
     width: 80%;
     max-width: 1200px;
@@ -202,30 +179,26 @@ button[type="submit"]:hover
     padding-top: 50px;
 }
 
-.left-section 
-{
+.left-section {
     flex: 1;
     text-align: center;
     padding: 20px;
     background: #ffffff;
 }
 
-.image 
-{
+.image {
     max-width: 100%;
     height: auto;
     border-radius: 8px;
 }
 
-.text 
-{
+.text {
     margin-top: 15px;
     color: #000000;
     font-size: 16px;
 }
 
-.right-section 
-{
+.right-section {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -235,13 +208,12 @@ button[type="submit"]:hover
     background: #ffffff;
 }
 
-.right-section a
-{
-    color: inherit; 
+.right-section a {
+    color: inherit;
     text-decoration: none;
 }
-.btn 
-{
+
+.btn {
     margin: 10px 0;
     padding: 10px 20px;
     font-size: 16px;
@@ -254,16 +226,14 @@ button[type="submit"]:hover
     transition: background-color 0.3s ease;
 }
 
-.btn:hover 
-{
+.btn:hover {
     background-color: #00152a;
 }
 
 
 /*stuff for profile page*/
 
-.profilecnt 
-{
+.profilecnt {
     background: #fff;
     border-radius: 10px;
     padding: 40px;
@@ -272,16 +242,14 @@ button[type="submit"]:hover
     align-items: center;
 }
 
-.profile-header 
-{
+.profile-header {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
 }
 
 
-.profile-image img 
-{
+.profile-image img {
     width: 150px;
     height: 150px;
     object-fit: cover;
@@ -291,29 +259,25 @@ button[type="submit"]:hover
 }
 
 
-.username 
-{
+.username {
     font-size: 36px;
     color: #002e5b;
 }
 
 
-.profile-details p
-{
+.profile-details p {
     margin-bottom: 20px;
-    margin-top:15px ;
+    margin-top: 15px;
 }
 
-.profile-details strong 
-{
+.profile-details strong {
     color: #002e5b;
 }
 
 
 
 /*stuff for footer*/
-.bottom 
-{
+.bottom {
     display: flex;
     flex-wrap: wrap;
     background-color: #002e5b;
@@ -321,42 +285,35 @@ button[type="submit"]:hover
     padding: 20px;
 }
 
-.bottom-section 
-{
+.bottom-section {
     flex: 1;
     margin: 0 20px;
 }
 
-.bottom-section h4 
-{
+.bottom-section h4 {
     margin-bottom: 10px;
 }
 
-.bottom-section ul 
-{
+.bottom-section ul {
     list-style-type: none;
     padding: 0;
 }
 
-.bottom-section ul li 
-{
+.bottom-section ul li {
     margin-bottom: 10px;
 }
 
-.bottom-section ul li a 
-{
+.bottom-section ul li a {
     color: #fff;
     text-decoration: none;
     transition: color 0.3s;
 }
 
-.bottom-section ul li a:hover 
-{
+.bottom-section ul li a:hover {
     text-decoration: underline;
 }
 
-.end 
-{
+.end {
     display: flex;
     justify-content: center;
     background-color: #002e5b;
@@ -364,14 +321,12 @@ button[type="submit"]:hover
     padding: 10px 0;
 }
 
-footer marquee 
-{
+footer marquee {
     width: 100%;
 }
 
 /* stuff for the about page*/
-body 
-{
+body {
     background-color: white;
     margin: 0;
     padding: 0;
@@ -379,8 +334,7 @@ body
     background: #fff;
 }
 
-.team 
-{
+.team {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
@@ -389,8 +343,7 @@ body
 }
 
 
-.member 
-{
+.member {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -401,18 +354,17 @@ body
 }
 
 
-.member-image 
-{
+.member-image {
     height: 150px;
     width: 150px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid #fff; /* Optional border for better aesthetics */
+    border: 2px solid #fff;
+    /* Optional border for better aesthetics */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.dreamteam 
-{
+.dreamteam {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -421,19 +373,17 @@ body
     font-weight: bold;
     font-size: 2rem;
     color: #002e5b;
-    cursor: pointer; 
+    cursor: pointer;
     transition: color 0.2s ease;
 }
 
-.dreamteam:hover 
-{
-    color: #710404; 
+.dreamteam:hover {
+    color: #710404;
 }
 
 /* stuff for the edit page*/
 
-.alarm_button 
-{
+.alarm_button {
     display: inline-block;
     padding: 10px;
     font-size: 17px;
@@ -450,14 +400,12 @@ body
     margin: 10px 0;
 }
 
-.alarm_button:hover 
-{
+.alarm_button:hover {
     background-color: beige;
     color: blue;
 }
 
-.form-control 
-{
+.form-control {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -466,23 +414,20 @@ body
 }
 
 /*stuff for the create page */
-.scheduler 
-{
+.scheduler {
     padding: 20px;
     display: flex;
     flex-direction: column;
 }
 
-.form_alarm 
-{
+.form_alarm {
     background: rgb(135, 148, 232);
     color: rgb(249, 249, 251);
     padding: 20px;
     border-radius: 10px;
 }
 
-.form-control-multiple 
-{
+.form-control-multiple {
     width: 100%;
     padding: 12px;
     margin: 10px 0;
@@ -494,16 +439,14 @@ body
     box-sizing: border-box;
 }
 
-.title_alarm 
-{
+.title_alarm {
     padding: 10px;
     font-size: 25px;
     color: #0E3386;
     text-align: left;
 }
 
-.table_alarm 
-{
+.table_alarm {
     margin-top: 20px;
     background: rgb(135, 148, 232);
     color: rgb(0, 0, 0);
@@ -514,8 +457,7 @@ body
 
 
 .table_alarm th,
-.table_alarm td 
-{
+.table_alarm td {
     padding: 12px;
     width: auto;
     text-align: left;
@@ -526,22 +468,19 @@ body
     overflow: hidden;
 }
 
-.table_alarm th 
-{
+.table_alarm th {
     background-color: #f4f4f4;
     color: #333;
     width: 40px;
 }
 
-.table_alarm tr:hover 
-{
+.table_alarm tr:hover {
     background-color: #4446b1;
     transition: background-color 0.3s ease;
 
 }
 
-button.alarm_button 
-{
+button.alarm_button {
     all: unset;
     display: flex;
     padding: 10px 15px;
@@ -558,14 +497,12 @@ button.alarm_button
     box-sizing: border-box;
 }
 
-button.alarm_button:hover 
-{
+button.alarm_button:hover {
     background-color: beige;
     color: blue;
 }
 
-.al 
-{
+.al {
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -573,18 +510,33 @@ button.alarm_button:hover
     justify-content: space-between;
 }
 
-#addalarmbtn 
-{
+#addalarmbtn {
     right: 0;
     text-decoration: none;
     margin-left: auto;
 }
 
-.pagination 
-{
+.pagination {
     display: flex;
     justify-content: center;
     gap: 10px;
     padding: 10px;
     margin-top: 10px;
+}
+
+.chart {
+    max-width: 900px;
+    height: 450px;
+    padding: 50px;
+    margin: 0 auto;
+}
+
+.chart .chart_types {
+    text-align: center;
+    margin-bottom: 30px;
+
+}
+
+.chart .chart_types button {
+    padding: 20px;
 }

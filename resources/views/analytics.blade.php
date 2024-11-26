@@ -28,6 +28,47 @@
         </div>
     </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="chart">
+        <div class="chart_types">
+
+            <button onclick="setChartType('bar')">Bars</button>
+            <button onclick="setChartType('line')">Line</button>
+            <button onclick="setChartType('doughnut')">Doughnut</button>
+            <button onclick="setChartType('polarArea')">PolarArea</button>
+            <button onclick="setChartType('radar')">Radar</button>
+
+        </div>
+        <canvas id="myChart"></canvas>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <div class="bottom">
         <div class="bottom-section">
             <h4>Company</h4>
@@ -62,6 +103,7 @@
     </div>
     <script src="{{ asset('js/support.js') }}"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 
 </body>
