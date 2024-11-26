@@ -41,36 +41,46 @@ document.getElementById('dream-team-title').addEventListener('click', function (
 });
 
 // javascript for chart
-const ctx = document.getElementById('myChart');
+const ctx = document.getElementById('myChart').getContext('2d');
 
 let myChart;
 let jsonData;
 
-fetch("{{ asset('json/data.json') }}").then(function (response) {
-    if (response.ok == true) {
-        return response.json();
+// Fetch JSON data
+fetch("{{ asset('json/data.json') }}")
+    .then(function (response) {
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error('Failed to fetch data.');
+        }
+    })
+    .then(function (data) {
+        jsonData = data;
+        createChart(data, 'bar');
+    })
+    .catch(function (error) {
+        console.error('Error:', error);
+    });
+
+function setChartType(chartType) {
+    if (myChart) {
+        myChart.destroy();
     }
-}).then(function (data) {
-    jsonData = data;
-    createChart(data, 'bar');
-});
-
-function setChart(chartType) {
-
-    myChart.destory();
     createChart(jsonData, chartType);
-
 }
-function createChart(data, type) {
 
+function createChart(data, type) {
     myChart = new Chart(ctx, {
-        type: 'type',
+        type: type,
         data: {
             labels: data.map(row => row.day),
             datasets: [{
-                label: '# of Votes',
+                label: 'Height Data',
                 data: data.map(row => row.height),
-                borderWidth: 1
+                borderWidth: 1,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)'
             }]
         },
         options: {
