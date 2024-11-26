@@ -46,7 +46,7 @@ const ctx = document.getElementById('myChart');
 let myChart;
 let jsonData;
 
-fetch('data.json').then(function (response) {
+fetch("{{ asset('json/data.json') }}").then(function (response) {
     if (response.ok == true) {
         return response.json();
     }
