@@ -101,9 +101,10 @@
             </marquee>
         </footer>
     </div>
-    <script src="{{ asset('js/support.js') }}"></script>
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <script src="{{ asset('js/support.js') }}"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
 
 
 </body>
