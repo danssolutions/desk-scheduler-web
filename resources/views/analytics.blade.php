@@ -41,6 +41,7 @@
 
 
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <div class="chart">
         <div class="chart_types">
@@ -52,7 +53,7 @@
             <button onclick="setChartType('radar')">Radar</button>
 
         </div>
-        <canvas id="myChart"></canvas>
+        <canvas width="400" height="400" id="myChart"></canvas>
     </div>
 
 

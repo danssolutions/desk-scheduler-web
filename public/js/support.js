@@ -41,55 +41,68 @@ document.getElementById('dream-team-title').addEventListener('click', function (
 });
 
 // javascript for chart
-const ctx = document.getElementById('myChart').getContext('2d');
+document.addEventListener('DOMContentLoaded', function () {
+    const ctx = document.getElementById('myChart').getContext('2d');
+    let myChart;
+    let jsonData;
 
-let myChart;
-let jsonData;
+    // Fetch JSON data
+    fetch("{{ asset('json/data.json') }}")
+        .then(function (response) {
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error('Failed to fetch data.');
+            }
+        })
+        .then(function (data) {
+            console.log('Fetched Data:', data); // Verify if data is fetched correctly
+            jsonData = data;
+            // Create initial chart with 'bar' type
+            createChart(data, 'bar');
+        })
+        .catch(function (error) {
+            console.error('Error:', error);
+        });
 
-// Fetch JSON data
-fetch("{{ asset('json/data.json') }}")
-    .then(function (response) {
-        if (response.ok) {
-            return response.json();
-        } else {
-            throw new Error('Failed to fetch data.');
+    // Function to switch chart type
+    function setChartType(chartType) {
+        if (myChart) {
+            myChart.destroy();
         }
-    })
-    .then(function (data) {
-        jsonData = data;
-        createChart(data, 'bar');
-    })
-    .catch(function (error) {
-        console.error('Error:', error);
-    });
-
-function setChartType(chartType) {
-    if (myChart) {
-        myChart.destroy();
+        createChart(jsonData, chartType);
     }
-    createChart(jsonData, chartType);
-}
 
-function createChart(data, type) {
-    myChart = new Chart(ctx, {
-        type: type,
-        data: {
-            labels: data.map(row => row.day),
-            datasets: [{
-                label: 'Height Data',
-                data: data.map(row => row.height),
-                borderWidth: 1,
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderColor: 'rgba(75, 192, 192, 1)'
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
+    // Function to create a chart
+    function createChart(data, type) {
+        myChart = new Chart(ctx, {
+            type: type, // Use the variable 'type' here
+            data: {
+                labels: data.map(row => row.day),
+                datasets: [{
+                    label: 'Height Data',
+                    data: data.map(row => row.height),
+                    borderWidth: 1,
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)'
+                }]
             },
-            maintainAspectRatio: false
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                },
+                maintainAspectRatio: false
+            }
+        });
+    }
+
+    // Attach setChartType function to buttons
+    document.querySelector('.chart_types').addEventListener('click', function (event) {
+        if (event.target.tagName === 'BUTTON') {
+            const chartType = event.target.getAttribute('onclick').replace('setChartType(\'', '').replace('\')', '');
+            setChartType(chartType);
         }
     });
-}
+});
