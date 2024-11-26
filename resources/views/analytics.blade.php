@@ -10,12 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="icon" href="{{ asset('images/logo.png') }}" type="image/x-icon">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.min.js"
-        integrity="sha512-L0Shl7nXXzIlBSUUPpxrokqq4ojqgZFQczTYlGjzONGTDAcLremjwaWv5A+EDLnxhQzY5xUZPWLOLqYRkY0Cbw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <title>ANALYTICS</title>
 </head>
 
@@ -47,19 +45,45 @@
 
 
 
+    <div class="container">
+        <div class="card">
 
-    <div class="chart">
-        <div class="chart_types">
-            <button data-chart-type="bar">Bars</button>
-            <button data-chart-type="line">Line</button>
-            <button data-chart-type="doughnut">Doughnut</button>
-            <button data-chart-type="polarArea">PolarArea</button>
-            <button data-chart-type="radar">Radar</button>
+            <div class="card-header"></div>
+
+            <div class="card_body">
+
+                <div>
+                    <canvas id="myChart" style="width: 400px;"></canvas>
+                </div>
+
+                <script>
+                    const ctx = document.getElementById('myChart');
+                    const labels = {!! json_encode($labels) !!};
+                    const data = {!! json_encode($data) !!};
+
+
+                    new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                label: '# Height',
+                                data: data,
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true
+                                }
+                            }
+                        }
+                    });
+                </script>
+            </div>
         </div>
-
-        <canvas width="400" height="400" id="myChart"></canvas>
     </div>
-
 
 
 
@@ -106,10 +130,10 @@
             </marquee>
         </footer>
     </div>
-   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-   <script src="{{ asset('js/support.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ asset('js/support.js') }}"></script>
 
-    
+
 
 
 </body>
