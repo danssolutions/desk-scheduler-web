@@ -527,11 +527,13 @@ button.alarm_button:hover {
 
 
 
-.card_body {
-    text-align: center;
-    padding: 20px;
-}
 
 #myChart {
-    width: 400px;
+    width: 70%;
+    max-width: 800px;
+    /* Sets a maximum width for large screens */
+    height: 700px;
+    /* Sets a fixed height to make the chart proportional */
+    margin: 0 auto;
+    /* Centers the chart horizontally */
 }
