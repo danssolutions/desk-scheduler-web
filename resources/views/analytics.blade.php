@@ -41,18 +41,17 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 
     <div class="chart">
         <div class="chart_types">
-
-            <button onclick="setChartType('bar')">Bars</button>
-            <button onclick="setChartType('line')">Line</button>
-            <button onclick="setChartType('doughnut')">Doughnut</button>
-            <button onclick="setChartType('polarArea')">PolarArea</button>
-            <button onclick="setChartType('radar')">Radar</button>
-
+            <button data-chart-type="bar">Bars</button>
+            <button data-chart-type="line">Line</button>
+            <button data-chart-type="doughnut">Doughnut</button>
+            <button data-chart-type="polarArea">PolarArea</button>
+            <button data-chart-type="radar">Radar</button>
         </div>
+
         <canvas width="400" height="400" id="myChart"></canvas>
     </div>
 

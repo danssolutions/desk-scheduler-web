@@ -65,16 +65,12 @@ document.addEventListener('DOMContentLoaded', function () {
             console.error('Error:', error);
         });
 
-    // Function to switch chart type
-    function setChartType(chartType) {
+    // Function to create a chart
+    function createChart(data, type) {
         if (myChart) {
             myChart.destroy();
         }
-        createChart(jsonData, chartType);
-    }
 
-    // Function to create a chart
-    function createChart(data, type) {
         myChart = new Chart(ctx, {
             type: type, // Use the variable 'type' here
             data: {
@@ -98,11 +94,16 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Attach setChartType function to buttons
-    document.querySelector('.chart_types').addEventListener('click', function (event) {
-        if (event.target.tagName === 'BUTTON') {
-            const chartType = event.target.getAttribute('onclick').replace('setChartType(\'', '').replace('\')', '');
+    // Attach event listeners to buttons
+    document.querySelectorAll('.chart_types button').forEach(button => {
+        button.addEventListener('click', function () {
+            const chartType = this.getAttribute('onclick').replace('setChartType(\'', '').replace('\')', '');
             setChartType(chartType);
-        }
+        });
     });
+
+    // Function to change chart type
+    function setChartType(chartType) {
+        createChart(jsonData, chartType);
+    }
 });
