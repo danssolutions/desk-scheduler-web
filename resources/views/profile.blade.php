@@ -31,7 +31,7 @@
      <main class="profilecnt">
         <div class="profile-header">
             <div class="profile-image">
-                <img src="profile.jpg" alt="Profile Image">
+                <img src="{{ asset('images/pfp.jpg') }}" alt="Profile Image">
             </div>
             <h2 class="username"></br></br></br></br>loh</h2>
         </div>
