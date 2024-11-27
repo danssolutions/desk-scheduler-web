@@ -11,9 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="icon" href="{{ asset('images/logo.png') }}" type="image/x-icon">
-    
+
     <!-- Include Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <title>SCHEDULER</title>
 
 
@@ -127,7 +126,47 @@
             </marquee>
         </footer>
     </div>
-<script src="{{ asset('js/support.js') }}"></script>
+    <script src="{{ asset('js/support.js') }}"></script>
+    <style>
+        .pagination {
+            display: flex;
+            padding-left: 0;
+            list-style: none;
+            border-radius: 0.25rem;
+        }
+
+        .page-item {
+            margin: 0 2px;
+        }
+
+        .page-link {
+            position: relative;
+            display: block;
+            padding: 0.5rem 0.75rem;
+            margin-left: -1px;
+            line-height: 1.25;
+            color: #007bff;
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+        }
+
+        .page-link:hover {
+            color: #0056b3;
+            background-color: #e9ecef;
+            border-color: #dee2e6;
+        }
+
+        /* Style for active page */
+        .page-item.active .page-link {
+            background-color: #007bff;
+            /* Blue background */
+            color: #fff;
+            /* White text */
+            border-color: #007bff;
+            /* Optional: Change border color to match */
+        }
+    </style>
+
 </body>
 
 </html>
