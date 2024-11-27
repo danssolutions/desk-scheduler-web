@@ -95,29 +95,24 @@ class PostController extends Controller
         $post->delete();
         return back();
     }
-   /* public function notificationdesk($id)
+    public function notificationdesk()
     {
-
-        $currentDay = Carbon::now()->format('l');        
+        // Code for notification logic
+        $currentDay = Carbon::now()->format('l');
         $currentTime = Carbon::now();
-        
-        $timeWindowStart = $currentTime->copy()->subMinutes(1)->format('H:i');
-        $timeWindowEnd = $currentTime->copy()->addMinutes(1)->format(format: 'H:i');
-        
-        // Fetch records where the day matches and the time_from is near the current time
-        $posts = Post::table('posts')
-            ->whereJsonContains('days', $currentDay)
+
+        $timeWindowStart = $currentTime->copy()->subMinutes(3)->format('H:i');
+        $timeWindowEnd = $currentTime->copy()->addMinutes(5)->format('H:i');
+
+        $posts = Post::whereJsonContains('days', $currentDay)
             ->whereTime('time_from', '>=', $timeWindowStart)
             ->whereTime('time_from', '<=', $timeWindowEnd)
             ->get();
 
-
-
-            foreach ($posts as $post) {
-                notify()->success('Your desk will move soon. ⚡️');
-            }
-        
-            return response()->json(['message' => 'Desk notifications checked.']);
+        foreach ($posts as $post) {
+            notify()->success('Your desk will move soon. ⚡️');
         }
-            */
+
+        return response()->json(['message' => 'Desk notifications checked.']);
+    }
     }
