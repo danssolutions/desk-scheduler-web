@@ -44,6 +44,7 @@ class PostController extends Controller
         ]);
         
         $post->save();
+        notify()->success('Alarm created successfully!');
 
         return redirect("/");
     }
@@ -61,7 +62,7 @@ class PostController extends Controller
     }
 
     
-    public function update(Request $request, $id)
+       public function update(Request $request, $id)
     {
         $request->validate([
             'name' => 'required|string',
@@ -71,23 +72,23 @@ class PostController extends Controller
             'days' => 'required|array',
             'alarm_sound' => 'required|string',
         ]);
-
+    
         $post = Post::findOrFail($id);
-
+    
         $post->update([
             'name' => $request->name,
-            'tables' => json_encode($request->tables),  
+            'tables' => $request->tables,
             'height' => $request->height,
             'time_from' => $request->time_from,
-            'days' => json_encode($request->days),  
+            'days' => $request->days,  // Przekazywanie bezpośrednio tablicy
             'alarm_sound' => $request->alarm_sound,
         ]);
-
+    
         notify()->success('Alarm updated successfully!');
-
+    
         return redirect("/");
     }
-
+    
     
     public function destroy($id)
     {
@@ -95,24 +96,33 @@ class PostController extends Controller
         $post->delete();
         return back();
     }
+  
+
     public function notificationdesk()
-    {
-        // Code for notification logic
-        $currentDay = Carbon::now()->format('l');
-        $currentTime = Carbon::now();
+{
+    $currentDay = Carbon::now()->format('l');
+    $currentTime = Carbon::now()->format('H:i:s'); 
 
-        $timeWindowStart = $currentTime->copy()->subMinutes(3)->format('H:i');
-        $timeWindowEnd = $currentTime->copy()->addMinutes(5)->format('H:i');
+    $timeWindowStart = Carbon::now()->subMinutes(2)->format('H:i:s');
+    $timeWindowEnd = Carbon::now()->addMinutes(2)->format('H:i:s');
 
-        $posts = Post::whereJsonContains('days', $currentDay)
-            ->whereTime('time_from', '>=', $timeWindowStart)
-            ->whereTime('time_from', '<=', $timeWindowEnd)
-            ->get();
+    $posts = Post::whereJsonContains('days', $currentDay) 
+        ->whereBetween('time_from', [$timeWindowStart, $timeWindowEnd]) 
+        ->get();
 
-        foreach ($posts as $post) {
-            notify()->success('Your desk will move soon. ⚡️');
-        }
 
-        return response()->json(['message' => 'Desk notifications checked.']);
+        $post = Post::first(); // Replace 'first()' with a valid query if needed
+        dd(Post::find(29)->days); // Replace 1 with a valid ID
+        
+
+    foreach ($posts as $post) {
+        notify()->success('Twój stół wkrótce się podniesie. ⚡️'); 
     }
+
+    return response()->json([
+        'message' => 'Sprawdzono powiadomienia o biurkach.',
+        'posts' => $posts
+    ]);
+}
+
     }

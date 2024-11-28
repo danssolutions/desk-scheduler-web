@@ -20,6 +20,24 @@
 </head>
 
 <body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: '/check-desk-notifications', // URL trasy
+                method: 'GET',
+                success: function(response) {
+                    console.log(response.message); // Logowanie komunikatu o sukcesie
+                    console.log(response.posts); // Logowanie pasujących postów do debugowania
+                },
+                error: function(xhr, status, error) {
+                    console.error('Błąd:', error);
+                }
+            });
+        });
+    </script>
+
+
     <div class="container">
         <div class="logo">
             <img src="https://img.icons8.com/quill/100/228BE6/galaxy.png" alt="Home" />

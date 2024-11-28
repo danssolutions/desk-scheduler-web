@@ -41,7 +41,8 @@ Route::put('/update/{id}',action: [PostController::class,'update']);
 
 Route::put('/posts/{id}', [PostController::class, 'update']);
 
-Route::get('/notify', [PostController::class, 'notificationdesk']);
+// Route::get('/notify', [PostController::class, 'notificationdesk']);
+Route::get('/check', [PostController::class, 'notificationdesk']);
 
 
 

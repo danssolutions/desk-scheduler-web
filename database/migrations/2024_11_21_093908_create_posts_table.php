@@ -17,7 +17,7 @@ return new class extends Migration
             $table->json('tables');
             $table->integer('height');
             $table->time('time_from');
-            $table->json('days'); 
+            $table->json('days');
             $table->string('alarm_sound'); 
             $table->timestamps();
         });
