@@ -7,6 +7,9 @@ use App\Models\Post;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Log;
+use App\Notifications\InvoicePaid;
+use Illuminate\Support\Facades\Notification;
 
 class PostController extends Controller
 {
@@ -27,28 +30,30 @@ class PostController extends Controller
     {
         $request->validate([
             'name' => 'required|string',
-            'tables' => 'required|array',
+            'tables' => 'required|array', 
             'height' => 'required|integer',
             'time_from' => 'required|string',
-            'days' => 'required|array',
+            'days' => 'required|string', 
             'alarm_sound' => 'required|string',
         ]);
-
+    
+        $days = is_array($request->days) ? implode(',', $request->days) : $request->days;
+    
         $post = new Post([
-            "name" => $request->name,
+            'name' => $request->name,
             "tables" => json_encode($request->input('tables')),
-            "height" => $request->height,
-            "time_from" => $request->time_from,
-            "days" => json_encode($request->days),
-            "alarm_sound" => $request->alarm_sound,
+            'height' => $request->height,
+            'time_from' => $request->time_from,
+            'days' => $days, 
+            'alarm_sound' => $request->alarm_sound,
         ]);
-        
-        $post->save();
-        notify()->success('Alarm created successfully!');
-
-        return redirect("/");
+    
+        $post->save();    
+return redirect('/');
     }
-
+    
+    
+    
     
     public function show(Post $post)
     {
@@ -62,32 +67,31 @@ class PostController extends Controller
     }
 
     
-       public function update(Request $request, $id)
-    {
-        $request->validate([
-            'name' => 'required|string',
-            'tables' => 'required|array',
-            'height'=>'required|integer',
-            'time_from' => 'required|string',
-            'days' => 'required|array',
-            'alarm_sound' => 'required|string',
-        ]);
+    public function update(Request $request, $id)
+{
+    $request->validate([
+        'name' => 'required|string',
+        'tables' => 'required|array',   
+        'height' => 'required|integer',
+        'time_from' => 'required|string',
+        'days' => 'required|string',    
+        'alarm_sound' => 'required|string',
+    ]);
+
+    $post = Post::findOrFail($id);
+    $post->update([
+        'name' => $request->name,
+        'tables' => $request->tables,   
+        'height' => $request->height,
+        'time_from' => $request->time_from,
+        'days' => $request->days,       
+        'alarm_sound' => $request->alarm_sound,
+    ]);
+    notify()->success('Alarm updated successfully!');
+    return redirect('/');
+}
+
     
-        $post = Post::findOrFail($id);
-    
-        $post->update([
-            'name' => $request->name,
-            'tables' => $request->tables,
-            'height' => $request->height,
-            'time_from' => $request->time_from,
-            'days' => $request->days,  // Przekazywanie bezpośrednio tablicy
-            'alarm_sound' => $request->alarm_sound,
-        ]);
-    
-        notify()->success('Alarm updated successfully!');
-    
-        return redirect("/");
-    }
     
     
     public function destroy($id)
@@ -98,31 +102,33 @@ class PostController extends Controller
     }
   
 
-    public function notificationdesk()
+    /*public function notificationdesk()
 {
     $currentDay = Carbon::now()->format('l');
-    $currentTime = Carbon::now()->format('H:i:s'); 
+    $currentTime = Carbon::now()->format('H:i'); // current time without seconds
 
-    $timeWindowStart = Carbon::now()->subMinutes(2)->format('H:i:s');
-    $timeWindowEnd = Carbon::now()->addMinutes(2)->format('H:i:s');
+    // Calculate the time window in HH:MM format
+    $timeWindowStart = Carbon::now()->subMinutes(2)->format('H:i'); // 2 minutes before current time
+    $timeWindowEnd = Carbon::now()->addMinutes(2)->format('H:i');   // 2 minutes after current time
+    
+    // Fetch the posts within the time window and current day
+    $posts = Post::where('days', 'like', '%' . $currentDay . '%')
+                 ->whereRaw('time_from::time BETWEEN ? AND ?', [$timeWindowStart, $timeWindowEnd])
+                 ->get();
+    
+    // Debugging: Check the fetched posts
+    dd($posts);
 
-    $posts = Post::whereJsonContains('days', $currentDay) 
-        ->whereBetween('time_from', [$timeWindowStart, $timeWindowEnd]) 
-        ->get();
-
-
-        $post = Post::first(); // Replace 'first()' with a valid query if needed
-        dd(Post::find(29)->days); // Replace 1 with a valid ID
-        
-
+    // Loop through the posts and send notification for each one
     foreach ($posts as $post) {
-        notify()->success('Twój stół wkrótce się podniesie. ⚡️'); 
+        // Send a notification for each post
+        notify()->success('fire ⚡️ for ' . $post->name);
     }
-
-    return response()->json([
-        'message' => 'Sprawdzono powiadomienia o biurkach.',
-        'posts' => $posts
-    ]);
 }
 
+    */
+     
+    
+
+    
     }

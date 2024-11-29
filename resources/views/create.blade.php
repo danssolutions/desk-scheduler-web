@@ -40,7 +40,9 @@
 
                 <input type="time" id="time_from" name="time_from" class="form-control" placeholder="Time_from"
                     required>
-                <select id="days" name="days[]" multiple>
+
+
+                <select id="days" name="days" multiple>
                     <option value="Monday">Monday</option>
                     <option value="Tuesday">Tuesday</option>
                     <option value="Wednesday">Wednesday</option>
@@ -57,7 +59,7 @@
                     <option value="Brr">Brr</option>
                 </select>
 
-                <button type="submit" class="alarm_button" onclick="scheduleReminder();">Submit</button>
+                <button type="submit" class="alarm_button">Submit</button>
             </form>
         </div>
     </div>

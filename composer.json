@@ -7,6 +7,7 @@
     "require": {
         "php": "^8.2",
         "laravel/framework": "^11.9",
+        "laravel/slack-notification-channel": "^3.4",
         "laravel/tinker": "^2.9",
         "mckenziearts/laravel-notify": "^2.5"
     },

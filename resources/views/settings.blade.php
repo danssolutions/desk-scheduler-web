@@ -8,14 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <title>MAIN</title>
+    <title>PROFILE</title>
+
+
 </head>
 
 <body>
     <div class="container">
         <div class="logo">
             <img src="https://img.icons8.com/quill/100/228BE6/galaxy.png" alt="Home" />
-            <h1> <a href="/main">Atari800</a></h1>
+            <h1><a href="/main">Atari800</a></h1>
         </div>
         <div class="profile-menu">
             <img src="{{ asset('images/profile.png') }}" alt="Profile" onclick="toggleDropdown()">
@@ -27,19 +29,28 @@
     </div>
 
 
-    <div class="mainpage">
-        <div class="left-section">
-            <img src="https://cdn.linak.com/-/media/images/applications/main/office-desks-application.jpg?bc=white&as=1&h=750&iar=0&w=750&rev=192b4a3e-9bb9-42e0-b2ca-f63814bde3fd&quality=75&hash=56726E8939B16A9A741900E86BF1CDC9"
-                alt="Example Image" class="image">
-        </div>
-        <div class="right-section">
-            <button class="btn"><a href="/profilepage">Profile</a></button>
-            <button class="btn"><a href="/settings">Scheduler </a></button>
-            <button class="btn"><a href="/analytics">Analytics</a></button>
-        </div>
-    </div>
 
-    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <div class="bottom">
         <div class="bottom-section">
@@ -72,7 +83,6 @@
             </marquee>
         </footer>
     </div>
-
 
     <script src="{{ asset('js/support.js') }}"></script>
 </body>

@@ -20,7 +20,8 @@ protected $primaryKey="id";
 
     protected $casts = [
         'tables' => 'array', 
-        'days'=> 'array',
+        'days' => 'string', 
+
     ];
     
 }

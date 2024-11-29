@@ -5,10 +5,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
+
 
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/settings',function(){return view('settings');});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -42,7 +45,7 @@ Route::put('/update/{id}',action: [PostController::class,'update']);
 Route::put('/posts/{id}', [PostController::class, 'update']);
 
 // Route::get('/notify', [PostController::class, 'notificationdesk']);
-Route::get('/check', [PostController::class, 'notificationdesk']);
 
 
 
+Route::get('send',[HomeController::class,"sendnotification"]);
