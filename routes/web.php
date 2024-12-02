@@ -48,4 +48,4 @@ Route::put('/posts/{id}', [PostController::class, 'update']);
 
 
 
-Route::get('send',[HomeController::class,"sendnotification"]);
+//Route::get('send',[HomeController::class,"sendnotification"]);

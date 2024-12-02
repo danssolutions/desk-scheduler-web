@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <title>PROFILE</title>
+    <title>SETTINGS</title>
 
 
 </head>
@@ -32,6 +32,33 @@
 
 
 
+
+    <div>
+        <p>Change mode</p>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="join">
+
+        <h1> Would you like to join our team? </h1>
+        <h3> If yes, send us an eamil with your portfolio and cv here 800.attari@gmail.com</h3>
+        <h4>Thank you!</h4>
+    </div>
 
 
 

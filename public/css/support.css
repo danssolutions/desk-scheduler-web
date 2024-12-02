@@ -537,3 +537,9 @@ button.alarm_button:hover {
     margin: 0 auto;
     /* Centers the chart horizontally */
 }
+
+.join {
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
