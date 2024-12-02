@@ -11,16 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
+        
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('name'); 
             $table->json('tables');
             $table->integer('height');
             $table->string('time_from');
-            $table->string('days')->change();
-                        $table->string('alarm_sound'); 
+            $table->string('days');
+             $table->string('alarm_sound'); 
             $table->timestamps();
         });
+        
     }
 
     /**
