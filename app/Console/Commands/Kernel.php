@@ -33,7 +33,7 @@ class Kernel extends Command
     }
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('send:notifications')->everyFiveMinutes();
+        $schedule->command('send:notifications')->everyMinute();
     }
     
 

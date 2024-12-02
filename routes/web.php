@@ -6,6 +6,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DeskController;
+
+
 
 
 Route::get('/', function () {
@@ -49,3 +52,4 @@ Route::put('/posts/{id}', [PostController::class, 'update']);
 
 
 //Route::get('send',[HomeController::class,"sendnotification"]);
+Route::get('/test',[DeskController::class,"test"]);
