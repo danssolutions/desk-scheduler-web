@@ -14,12 +14,13 @@ use Illuminate\Support\Facades\Notification;
 class PostController extends Controller
 {
    
-    public function index()
-{
-    $posts = Post::paginate(3);
-    return view('index')->with('posts', $posts);
-}
 
+
+    public function index()
+    {
+        $posts = Post::paginate(3);
+        return view('index')->with('posts', $posts);
+    }
     
     public function create()
     {
@@ -81,7 +82,7 @@ return redirect('/');
     $post = Post::findOrFail($id);
     $post->update([
         'name' => $request->name,
-        'tables' => $request->tables,   
+        'tables' => json_encode($request->tables),
         'height' => $request->height,
         'time_from' => $request->time_from,
         'days' => $request->days,       

@@ -33,9 +33,11 @@
                 alt="Example Image" class="image">
         </div>
         <div class="right-section">
-            <button class="btn"><a href="/profilepage">Profile</a></button>
-            <button class="btn"><a href="/scheduler">Scheduler </a></button>
-            <button class="btn"><a href="/graph">Analytics</a></button>
+            <button class="btn" onclick="window.location.href='/profilepage'">Profile</button>
+
+            <button class="btn" onclick="window.location.href='/scheduler'">Scheduler</button>
+            <button class="btn" onclick="window.location.href='/graph'">Analytics</button>
+
         </div>
     </div>
 

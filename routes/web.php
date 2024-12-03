@@ -12,7 +12,7 @@ use App\Http\Controllers\DeskController;
 
 
 Route::get('/', function () {
-    return view('about');
+    return view('welcome');
 });
 Route::get('/settings',function(){return view('settings');});
 
@@ -38,7 +38,7 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 
-Route::get('/scheduler', [PostController::class, 'index'])->name('index');
+Route::get('/', action:  [PostController::class, 'index'])->name('index');
 Route::get('/create',function(){return view('create');});
 Route::post('/post',[PostController::class,'store']);
 Route::delete('/delete/{id}',action: [PostController::class,'destroy']);
