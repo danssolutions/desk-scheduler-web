@@ -34,8 +34,8 @@
         </div>
         <div class="right-section">
             <button class="btn"><a href="/profilepage">Profile</a></button>
-            <button class="btn"><a href="/settings">Scheduler </a></button>
-            <button class="btn"><a href="/analytics">Analytics</a></button>
+            <button class="btn"><a href="/scheduler">Scheduler </a></button>
+            <button class="btn"><a href="/graph">Analytics</a></button>
         </div>
     </div>
 
