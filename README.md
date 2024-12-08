@@ -42,11 +42,11 @@ This Laravel-based web application is designed to manage and edit events and ass
 
 4. **Run Database Migrations**:
 
-- php artisan migrate
+```php artisan migrate```
 
 5. **Start the Server**:
 
-- php artisan serve
+```php artisan serve```
 
 ## Usage
 
