@@ -6,6 +6,9 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DeskController;
+
+
 
 
 Route::get('/', function () {
@@ -35,7 +38,7 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 
-Route::get('/', [PostController::class, 'index'])->name('index');
+Route::get('/', action:  [PostController::class, 'index'])->name('index');
 Route::get('/create',function(){return view('create');});
 Route::post('/post',[PostController::class,'store']);
 Route::delete('/delete/{id}',action: [PostController::class,'destroy']);
@@ -49,3 +52,4 @@ Route::put('/posts/{id}', [PostController::class, 'update']);
 
 
 //Route::get('send',[HomeController::class,"sendnotification"]);
+Route::get('/test',[DeskController::class,"test"]);
