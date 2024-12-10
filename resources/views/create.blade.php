@@ -72,10 +72,16 @@
                 </select>
 
                 <select id="alarm_sound" name="alarm_sound" class="form-control-multiple" required>
-                    <option value="">Please choose alarm sound</option>
-                    <option value="B">Bip</option>
-                    <option value="A">Beeze</option>
-                    <option value="K">Brr</option>
+                    <option value="0">None</option>
+                    <option value="B">Beep</option>
+                    <option value="E">Breeze</option>
+                    <option value="M">Brrr</option>
+                    <option value="Z">Bzzz</option>
+                    <option value="D">DOOM</option>
+                    <option value="R">Rick Roll</option>
+                    <option value="N">Nokia</option>
+                    <option value="K">Krusty Krab</option>
+                    <option value="P">Pink Panther</option>
                 </select>
 
                 <button type="submit" class="alarm_button">Submit</button>
