@@ -55,7 +55,7 @@ class DeskScheduler extends Command
                 $pico->preAlarm();
             }
         }
-
+        
         // Handle alarms for the exact current time
         foreach ($alarms as $alarm) {
             if (!is_null($alarm->desk_id)) {

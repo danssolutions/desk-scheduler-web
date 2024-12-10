@@ -15,7 +15,6 @@
 </head>
 
 <body>
-
     <div class="scheduler">
         <h3 class="title-alarm"><b>Add New Alarm</b></h3>
         <div class="form_alarm">
@@ -23,45 +22,21 @@
                 @csrf
                 <input id="name" type="text" name="name" class="form-control" placeholder="Name" required>
 
-
-
-
-                <select id="tables" name="tables[]" class="form-control-multiple" required multiple>
-                    <option value="">Please choose your table</option>
-                    <option value="Table_0">Table-O: Jane Doe</option>
-                    <option value="Table_1">Table_1: Daniel Vacas Crespo</option>
-                    <option value="Table_2">Table_2: Mickey Mouse</option>
-                    <option value="Table_3">Table_3: Spiderman</option>
-                    <option value="Table_4">Table_4: Jan Kowal</option>
-                    <option value="Table_5">Table_5: Sabrina Carpenter</option>
-                    <option value="Table_6">Table_6: XYZ</option>
-                    <option value="Table_7">Table_7: Boss</option>
+                <label for="desk_id">Select Desk:</label>
+                <select id="desk_id" name="desk_id" class="form-control" required>
+                    <option value="" disabled selected>Select a desk</option>
+                    @foreach($desks as $desk)
+                        <option value="{{ $desk }}">{{ 'Desk ' . $desk }}</option>
+                    @endforeach
                 </select>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                <input type="number" id="height" name="height" class="form-control" placeholder="Height"
+                <input type="number" id="height" name="height" class="form-control" placeholder="Height (mm)"
                     min="660" max="1320" required>
 
+                <input type="time" id="time_from" name="time_from" class="form-control" placeholder="Time From" required>
 
-                <input type="time" id="time_from" name="time_from" class="form-control" placeholder="Time_from"
-                    required>
-
-
-                <select id="days" name="days" multiple>
+                <label for="days">Select Day:</label>
+                <select id="days" name="days" class="form-control" required>
                     <option value="Monday">Monday</option>
                     <option value="Tuesday">Tuesday</option>
                     <option value="Wednesday">Wednesday</option>
@@ -71,7 +46,8 @@
                     <option value="Sunday">Sunday</option>
                 </select>
 
-                <select id="alarm_sound" name="alarm_sound" class="form-control-multiple" required>
+                <label for="alarm_sound">Select Alarm Sound:</label>
+                <select id="alarm_sound" name="alarm_sound" class="form-control" required>
                     <option value="" disabled selected>Please choose alarm sound</option>
 
                     <option value="0">None</option>
@@ -90,7 +66,6 @@
             </form>
         </div>
     </div>
-
 
     <div class="bottom">
         <div class="bottom-section">
@@ -128,6 +103,15 @@
     <audio src="" id="notificationSound"></audio>
     <script src="{{ asset('js/support.js') }}"></script>
 
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 </body>
 
 </html>

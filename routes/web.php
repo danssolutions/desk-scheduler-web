@@ -39,7 +39,7 @@ require __DIR__.'/auth.php';
 
 
 Route::get('/', action:  [PostController::class, 'index'])->name('index');
-Route::get('/create',function(){return view('create');});
+Route::get('/create',[PostController::class,'create']);
 Route::post('/post',[PostController::class,'store']);
 Route::delete('/delete/{id}',action: [PostController::class,'destroy']);
 Route::get('/edit/{id}',action: [PostController::class,'edit']);

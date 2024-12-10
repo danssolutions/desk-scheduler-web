@@ -28,78 +28,53 @@
         </div>
     </div>
 
-
     <div class="scheduler">
-        <h3 class="title_alarm">Update Post</h3>
+        <h3 class="title_alarm">Update Alarm</h3>
         <div class="form_alarm">
             <form action="/update/{{ $posts->id }}" method="post" enctype="multipart/form-data">
                 @csrf
                 @method('put')
                 <input value="{{ $posts->name }}" type="text" name="name" class="form-control"
-                    placeholder="Name">
+                    placeholder="Name" required>
 
-                <!-- <select name="tables[]" class="form-control-multiple" multiple>
-                    <option value="Table_0"
-                        {{ in_array('Table_0', json_decode($posts->tables) ?: []) ? 'selected' : '' }}>
-                        Table-O: Jane Doe
-                    </option>
-                    <option value="Table_1"
-                        {{ in_array('Table_1', json_decode($posts->tables) ?: []) ? 'selected' : '' }}>
-                        Table_1: Daniel Vacas Crespo
-                    </option>
-                    <option value="Table_2"
-                        {{ in_array('Table_2', json_decode($posts->tables) ?: []) ? 'selected' : '' }}>
-                        Table_2: Mickey Mouse
-                    </option>
-                    <option value="Table_3"
-                        {{ in_array('Table_3', json_decode($posts->tables) ?: []) ? 'selected' : '' }}>
-                        Table_3: Spiderman
-                    </option>
-                    <option value="Table_4"
-                        {{ in_array('Table_4', json_decode($posts->tables) ?: []) ? 'selected' : '' }}>
-                        Table_4: Jan Kowal
-                    </option>
-                    <option value="Table_5"
-                        {{ in_array('Table_5', json_decode($posts->tables) ?: []) ? 'selected' : '' }}>
-                        Table_5: Sabrina Carpenter
-                    </option>
-                    <option value="Table_6"
-                        {{ in_array('Table_6', json_decode($posts->tables) ?: []) ? 'selected' : '' }}>
-                        Table_6: XYZ
-                    </option>
-                    <option value="Table_7"
-                        {{ in_array('Table_7', json_decode($posts->tables) ?: []) ? 'selected' : '' }}>
-                        Table_7: Boss
-                    </option>
-                </select> -->
-
-
-                <input value="{{ $posts->height }}" type="number" name="height" class="form-control"
-                    placeholder="Height" min="660" max="1320" required>
-
-                <input value="{{ $posts->time_from }}" type="time" name="time_from" class="form-control"
-                    placeholder="Time_from">
-
-
-                <select name="days" class="form-control-multiple">
-                    <option value="Monday">Monday</option>
-                    <option value="Tuesday">Tuesday</option>
-                    <option value="Wednesday">Wednesday</option>
-                    <option value="Thursday">Thursday</option>
-                    <option value="Friday">Friday</option>
-                    <option value="Saturday">Saturday</option>
-                    <option value="Sunday">Sunday</option>
+                <label for="desk_id">Select Desk:</label>
+                <select id="desk_id" name="desk_id" class="form-control" required>
+                    <option value="" disabled>Select a desk</option>
+                    @foreach($desks as $desk)
+                        <option value="{{ $desk }}">{{ 'Desk ' . $desk }}</option>
+                    @endforeach
                 </select>
 
+                <input value="{{ $posts->height }}" type="number" name="height" class="form-control"
+                    placeholder="Height (mm)" min="660" max="1320" required>
 
+                <input value="{{ $posts->time_from }}" type="time" name="time_from" class="form-control"
+                    placeholder="Time From" required>
 
+                <label for="days">Select Day:</label>
+                <select id="days" name="days" class="form-control" multiple required>
+                    <option value="Monday" {{ in_array('Monday', json_decode($posts->days) ?: []) ? 'selected' : '' }}>Monday</option>
+                    <option value="Tuesday" {{ in_array('Tuesday', json_decode($posts->days) ?: []) ? 'selected' : '' }}>Tuesday</option>
+                    <option value="Wednesday" {{ in_array('Wednesday', json_decode($posts->days) ?: []) ? 'selected' : '' }}>Wednesday</option>
+                    <option value="Thursday" {{ in_array('Thursday', json_decode($posts->days) ?: []) ? 'selected' : '' }}>Thursday</option>
+                    <option value="Friday" {{ in_array('Friday', json_decode($posts->days) ?: []) ? 'selected' : '' }}>Friday</option>
+                    <option value="Saturday" {{ in_array('Saturday', json_decode($posts->days) ?: []) ? 'selected' : '' }}>Saturday</option>
+                    <option value="Sunday" {{ in_array('Sunday', json_decode($posts->days) ?: []) ? 'selected' : '' }}>Sunday</option>
+                </select>
 
-
-                <select name="alarm_sound" class="form-control">
-                    <option value="">Please choose alarm sound</option>
-                    <option value="Bip" {{ $posts->alarm_sound == 'Bip' ? 'selected' : '' }}>Bip</option>
-                    <option value="Beeze" {{ $posts->alarm_sound == 'Beeze' ? 'selected' : '' }}>Beeze</option>
-                    <option value="Brr" {{ $posts->alarm_sound == 'Brr' ? 'selected' : '' }}>Brr</option>
+                <label for="alarm_sound">Select Alarm Sound:</label>
+                <select id="alarm_sound" name="alarm_sound" class="form-control" required>
+                    <option value="" disabled>Please choose alarm sound</option>
+                    <option value="0" {{ $posts->alarm_sound == '0' ? 'selected' : '' }}>None</option>
+                    <option value="B" {{ $posts->alarm_sound == 'B' ? 'selected' : '' }}>Beep</option>
+                    <option value="E" {{ $posts->alarm_sound == 'E' ? 'selected' : '' }}>Breeze</option>
+                    <option value="M" {{ $posts->alarm_sound == 'M' ? 'selected' : '' }}>Brrr</option>
+                    <option value="Z" {{ $posts->alarm_sound == 'Z' ? 'selected' : '' }}>Bzzz</option>
+                    <option value="D" {{ $posts->alarm_sound == 'D' ? 'selected' : '' }}>DOOM</option>
+                    <option value="R" {{ $posts->alarm_sound == 'R' ? 'selected' : '' }}>Rick Roll</option>
+                    <option value="N" {{ $posts->alarm_sound == 'N' ? 'selected' : '' }}>Nokia</option>
+                    <option value="K" {{ $posts->alarm_sound == 'K' ? 'selected' : '' }}>Krusty Krab</option>
+                    <option value="P" {{ $posts->alarm_sound == 'P' ? 'selected' : '' }}>Pink Panther</option>
                 </select>
 
                 <button type="submit" class="alarm_button">Submit</button>

@@ -3,7 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use App\Models\Post; 
+use App\Models\Post;
 use App\Notifications\NotificationDesk;
 use Illuminate\Support\Facades\Notification;
 use Carbon\Carbon;
@@ -14,10 +14,10 @@ class HomeController extends Controller
     public function sendnotification()
     {
         $currentDay = Carbon::now()->format('l');
-        $currentTime = Carbon::now()->addMinutes(3)->format('H:i'); 
+        $currentTime = Carbon::now()->addMinutes(3)->format('H:i');
 
         $posts = Post::where('time_from', '<=', $currentTime)
-                    ->where('days', 'LIKE', "%$currentDay%") 
+            ->where('days', 'LIKE', "%$currentDay%")
             ->get();
 
         if ($posts->isEmpty()) {

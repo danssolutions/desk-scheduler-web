@@ -38,7 +38,7 @@ class SendNotifications extends Command
         $alarms = Post::where('time_from', $currentTime)
             ->where('days', $currentDay)
             ->get();
-        
+
         if ($alarms->isEmpty()) {
             $this->info('No notifications to send at this time.');
             return;

@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Http;
 // })->everyMinute();
 
 Schedule::command('app:schedule-desk')->everyMinute();
-Schedule::command('app:send-notification')->everyMinute();
+//Schedule::command('app:send-notification')->everyMinute();
 Schedule::command('app:check-desk')->everyFiveSeconds();
 
 // big TODO list here:
