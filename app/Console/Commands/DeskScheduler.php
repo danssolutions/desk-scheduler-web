@@ -34,19 +34,26 @@ class DeskScheduler extends Command
         $wiFi2BLE = new WiFi2BLEAPI(env('WIFI2BLE_BASE_URL'), env('WIFI2BLE_API_KEY'));
         $pico = new PicoAPI(env('PICO_BASE_URL'));
 
-        $now = Carbon::now();
-        $alarms = Post::where('time_from', $now->format('H:i'))
-            ->whereJsonContains('days', $now->format('l'))
-            ->get();
+        //$now = Carbon::now();
+        //$alarms = Post::where('time_from', $now->format('H:i'))
+        //    ->whereJsonContains('days', $now->format('l'))
+        //    ->get();
 
+        $currentDay = Carbon::now()->format('l');
+        $currentTime = Carbon::now()->addMinutes(3)->format('H:i'); 
+
+        $alarms = Post::where('time_from', '<=', $currentTime)
+            ->where('days', 'LIKE', "%$currentDay%") 
+            ->get();
+        
         foreach ($alarms as $alarm) {
-            $deskData = $wiFi2BLE->getDeskData($alarm->desk_id);
+            $deskData = $wiFi2BLE->getDeskData($alarm->tables[0]);
 
             // Move desk to position
-            $wiFi2BLE->updateDeskState($alarm->desk_id, ['position_mm' => $alarm->position]);
+            $wiFi2BLE->updateDeskState($alarm->tables[0], ['position_mm' => $alarm->height]);
 
             // Trigger alarm
-            $pico->triggerAlarm($alarm->alarm_sound, $alarm->position);
+            $pico->triggerAlarm($alarm->alarm_sound, $alarm->height);
         }
     }
 }
