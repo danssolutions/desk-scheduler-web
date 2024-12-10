@@ -17,8 +17,9 @@ use Illuminate\Support\Facades\Http;
 //     \Log::info("Alarm task executed");
 // })->everyMinute();
 
-Schedule::command('app:check-desk')->everyFiveSeconds();
 Schedule::command('app:schedule-desk')->everyMinute();
+Schedule::command('app:send-notification')->everyMinute();
+Schedule::command('app:check-desk')->everyFiveSeconds();
 
 // big TODO list here:
 // every minute, the scheduler must do at least the following:

@@ -21,7 +21,7 @@ class DeskChecker extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Check desks for errors';
 
     /**
      * Execute the console command.

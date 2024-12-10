@@ -16,37 +16,39 @@ class SendNotifications extends Command
      *
      * @var string
      */
-    protected $signature = 'send:notifications';
+    protected $signature = 'app:send-notification';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Send desk notifications to users automatically';
+    protected $description = 'Send desk notifications to users during alarms';
 
     /**
      * Execute the console command.
      */
     public function handle()
     {
+        // Get the current day and time, with timezone adjustment for GMT+1
         $currentDay = Carbon::now()->format('l');
-        $currentTime = Carbon::now()->addMinutes(3)->format('H:i');
+        $currentTime = Carbon::now()->addHours(1)->format('H:i');
 
-        $posts = Post::where('time_from', '<=', $currentTime)
-                     ->where('days', 'LIKE', "%$currentDay%")
-                     ->get();
-
-        if ($posts->isEmpty()) {
+        // Fetch alarms for the exact current time
+        $alarms = Post::where('time_from', $currentTime)
+            ->where('days', $currentDay)
+            ->get();
+        
+        if ($alarms->isEmpty()) {
             $this->info('No notifications to send at this time.');
             return;
         }
 
         $users = User::all();
-        foreach ($posts as $post) {
+        foreach ($alarms as $alarm) {
             $details = [
-                'greetings' => 'Reminder!',
-                'body' => "Your desk is gonna move soon.",
+                'greetings' => 'Desk alarm activated',
+                'body' => "Your desk is now changing position.",
                 'lastline' => 'Be ready!',
             ];
 

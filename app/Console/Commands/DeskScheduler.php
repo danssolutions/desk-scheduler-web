@@ -23,7 +23,7 @@ class DeskScheduler extends Command
      *
      * @var string
      */
-    protected $description = 'Command description';
+    protected $description = 'Check alarms and notify WiFi2BLE box and Pico if alarm triggered or about to trigger';
 
     /**
      * Execute the console command.
@@ -37,14 +37,14 @@ class DeskScheduler extends Command
         // Get the current day and time, with timezone adjustment for GMT+1
         $currentDay = Carbon::now()->format('l');
         $currentTime = Carbon::now()->addHours(1)->format('H:i');
-        $preAlarmTime = Carbon::now()->addHours(1)->addMinutes(3)->format('H:i'); // 3 minutes ahead
+        $preAlarmTime = Carbon::now()->addHours(1)->addMinutes(1)->format('H:i');
 
         // Fetch alarms for the exact current time
         $alarms = Post::where('time_from', $currentTime)
             ->where('days', $currentDay)
             ->get();
 
-        // Fetch alarms for pre-alarm time (3 minutes ahead)
+        // Fetch alarms for pre-alarm time
         $preAlarms = Post::where('time_from', $preAlarmTime)
             ->where('days', $currentDay)
             ->get();
