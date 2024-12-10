@@ -72,6 +72,8 @@
                 </select>
 
                 <select id="alarm_sound" name="alarm_sound" class="form-control-multiple" required>
+                    <option value="" disabled selected>Please choose alarm sound</option>
+
                     <option value="0">None</option>
                     <option value="B">Beep</option>
                     <option value="E">Breeze</option>
