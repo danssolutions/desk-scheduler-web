@@ -23,6 +23,9 @@
                 @csrf
                 <input id="name" type="text" name="name" class="form-control" placeholder="Name" required>
 
+
+
+
                 <select id="tables" name="tables[]" class="form-control-multiple" required multiple>
                     <option value="">Please choose your table</option>
                     <option value="Table_0">Table-O: Jane Doe</option>
@@ -34,6 +37,22 @@
                     <option value="Table_6">Table_6: XYZ</option>
                     <option value="Table_7">Table_7: Boss</option>
                 </select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 <input type="number" id="height" name="height" class="form-control" placeholder="Height"
                     min="660" max="1320" required>
 
@@ -54,9 +73,9 @@
 
                 <select id="alarm_sound" name="alarm_sound" class="form-control-multiple" required>
                     <option value="">Please choose alarm sound</option>
-                    <option value="Bip">Bip</option>
-                    <option value="Beeze">Beeze</option>
-                    <option value="Brr">Brr</option>
+                    <option value="B">Bip</option>
+                    <option value="A">Beeze</option>
+                    <option value="K">Brr</option>
                 </select>
 
                 <button type="submit" class="alarm_button">Submit</button>
