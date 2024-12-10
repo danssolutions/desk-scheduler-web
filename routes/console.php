@@ -11,11 +11,14 @@ use Illuminate\Support\Facades\Schedule;
 use Illuminate\Support\Facades\Http;
 
 // Schedule a task to run weekly at a specific time
-Schedule::call(function () {
-    // Task logic goes here
-    Http::get('http://192.168.43.38/api/prealarm');
-    \Log::info("Alarm task executed");
-})->everyMinute();
+// Schedule::call(function () {
+//     // Task logic goes here
+//     Http::get('http://192.168.43.38/api/prealarm');
+//     \Log::info("Alarm task executed");
+// })->everyMinute();
+
+Schedule::command('app:check-desk')->everyFiveSeconds();
+Schedule::command('app:schedule-desk')->everyMinute();
 
 // big TODO list here:
 // every minute, the scheduler must do at least the following:
