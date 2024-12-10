@@ -11,7 +11,7 @@ class Post extends Model
 protected $primaryKey="id";
     protected $fillable = [
         'name',
-        'tables',
+        'desk_id',
         'height',
         'time_from',
         'days',
@@ -19,7 +19,7 @@ protected $primaryKey="id";
     ];
 
     protected $casts = [
-        'tables' => 'array', 
+        'desk_id' => 'string', 
         'days' => 'string', 
 
     ];

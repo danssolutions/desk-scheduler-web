@@ -31,7 +31,7 @@ class PostController extends Controller
     {
         $request->validate([
             'name' => 'required|string',
-            'tables' => 'required|array', 
+            'desk_id' => 'required|string', 
             'height' => 'required|integer',
             'time_from' => 'required|string',
             'days' => 'required|string', 
@@ -42,7 +42,7 @@ class PostController extends Controller
     
         $post = new Post([
             'name' => $request->name,
-            "tables" => json_encode($request->input('tables')),
+            "desk_id" => $request->desk_id,
             'height' => $request->height,
             'time_from' => $request->time_from,
             'days' => $days, 
@@ -72,7 +72,7 @@ return redirect('/');
 {
     $request->validate([
         'name' => 'required|string',
-        'tables' => 'required|array',   
+        'desk_id' => 'required|string',
         'height' => 'required|integer',
         'time_from' => 'required|string',
         'days' => 'required|string',    
@@ -82,7 +82,7 @@ return redirect('/');
     $post = Post::findOrFail($id);
     $post->update([
         'name' => $request->name,
-        'tables' => json_encode($request->tables),
+        'desk_id' => $request->desk_id,
         'height' => $request->height,
         'time_from' => $request->time_from,
         'days' => $request->days,       

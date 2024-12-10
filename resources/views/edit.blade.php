@@ -38,7 +38,7 @@
                 <input value="{{ $posts->name }}" type="text" name="name" class="form-control"
                     placeholder="Name">
 
-                <select name="tables[]" class="form-control-multiple" multiple>
+                <!-- <select name="tables[]" class="form-control-multiple" multiple>
                     <option value="Table_0"
                         {{ in_array('Table_0', json_decode($posts->tables) ?: []) ? 'selected' : '' }}>
                         Table-O: Jane Doe
@@ -71,7 +71,7 @@
                         {{ in_array('Table_7', json_decode($posts->tables) ?: []) ? 'selected' : '' }}>
                         Table_7: Boss
                     </option>
-                </select>
+                </select> -->
 
 
                 <input value="{{ $posts->height }}" type="number" name="height" class="form-control"

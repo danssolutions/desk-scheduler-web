@@ -78,7 +78,7 @@
                     <tr>
                         <th scope="row">{{ $post->id }}</th>
                         <td>{{ $post->name }}</td>
-                        <td>{{ $post->tables[0] }}</td>
+                        <td>{{ $post->desk_id }}</td>
                         <td>{{ $post->height }}</td>
                         <td>{{ $post->time_from }}</td>
                         <td>{{ $post->days }}</td>
