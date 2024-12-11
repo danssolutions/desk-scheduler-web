@@ -20,13 +20,14 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/main', function(){ return view('main');});
+Route::get('/', action:  [PostController::class, 'index'])->name('index');
 Route::get('/profilepage', function(){ return view('profile');});
 Route::get('/contact', [ContactController::class, 'showContactForm'])->name('contact.form');
 Route::post('/contact', [ContactController::class, 'sendEmail'])->name('contact.send');
 Route::get('/about', function () {return view('about'); });
 Route::get('/dashboard', function () {return view('dashboard');})->middleware(['auth', 'verified'])->name('dashboard');
 Route::get('/graph',[ChartController::class,'loadGraphPage']);
+Route::get('/scheduleradmin', function(){ return view('scheduleradmin');});
 
 
 Route::middleware('auth')->group(function () {
@@ -38,7 +39,7 @@ Route::middleware('auth')->group(function () {
 require __DIR__.'/auth.php';
 
 
-Route::get('/', action:  [PostController::class, 'index'])->name('index');
+
 Route::get('/create',[PostController::class,'create']);
 Route::post('/post',[PostController::class,'store']);
 Route::delete('/delete/{id}',action: [PostController::class,'destroy']);
@@ -52,4 +53,3 @@ Route::put('/posts/{id}', [PostController::class, 'update']);
 
 
 //Route::get('send',[HomeController::class,"sendnotification"]);
-Route::get('/test',[DeskController::class,"test"]);

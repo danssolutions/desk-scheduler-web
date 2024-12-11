@@ -5,11 +5,26 @@
     box-sizing: border-box;
 }
 
+/* stuff for the about page*/
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: #fff;
+}
+
+main{
+    margin:auto;
+    color: black;
+}
+
 
 
 /*stuff for header*/
 .container {
-    background-color: #002e5b;
+    /* background-color: #002e5b; */
+    background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -60,7 +75,8 @@
     right: 0;
     top: 100%;
     background-color: #00152a;
-    color: #f1f1f1dc;
+    /* color: #f1f1f1dc; */
+    color: black;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     min-width: 150px;
     z-index: 10;
@@ -71,7 +87,8 @@
 .dropdown-menu a {
     display: block;
     padding: 10px;
-    color: #e9e8e8e8;
+    /* color: #e9e8e8e8; */
+    
     text-decoration: none;
     font-size: 14px;
 }
@@ -85,7 +102,7 @@
 
 
 /*stuff for contact page*/
-.main-content {
+.main-content {        /* contact page*/
     background: linear-gradient(to bottom, #002e5b, #f9f9f9);
     min-height: 75vh;
     width: 100%;
@@ -325,14 +342,7 @@ footer marquee {
     width: 100%;
 }
 
-/* stuff for the about page*/
-body {
-    background-color: white;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    background: #fff;
-}
+
 
 .team {
     display: grid;
