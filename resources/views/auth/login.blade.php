@@ -40,6 +40,11 @@
             @endif
 
             <x-primary-button class="ms-3">
+                <a href="{{ route('register') }}" >
+                    {{ __('Sign up') }}
+                </x-primary-button>
+
+            <x-primary-button class="ms-3">
                 {{ __('Log in') }}
             </x-primary-button>
         </div>
