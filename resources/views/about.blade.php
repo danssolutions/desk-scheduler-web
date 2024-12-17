@@ -1,7 +1,7 @@
 <x-app-layout>
 
 <body>
-
+    {{-- <div class="mainpage-about"> --}}
     <div class="dreamteam">
         <h1 id="dream-team-title">Dream Team</h1>
     </div>
@@ -31,7 +31,7 @@
 
     </div>
    
-
+{{-- </div> --}}
 
    
 

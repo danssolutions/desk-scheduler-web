@@ -14,10 +14,10 @@ use App\Services\WiFi2BLEAPI;
 
 class PostController extends Controller
 {
-    public function index()
+    public function scheduler()
     {
         $posts = Post::paginate(3);
-        return view('index')->with('posts', $posts);
+        return view('scheduler')->with('posts', $posts);
     }
 
     public function create()

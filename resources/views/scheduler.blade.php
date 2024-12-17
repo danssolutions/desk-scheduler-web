@@ -19,7 +19,7 @@
     </script>
 
 
-    @notifyCss
+    {{-- @notifyCss --}}
     <div class="scheduler">
         <div class="al">
             <h3 class="title_alarm">Scheduler - place where you can schedule height of your tables.</h3>
