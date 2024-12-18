@@ -36,7 +36,7 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-
+Route::get('/privacy', [HomeController::class, 'rules'])->name('websiteRegulations');
 
 Route::get('/create',[PostController::class,'create']);
 Route::post('/post',[PostController::class,'store']);

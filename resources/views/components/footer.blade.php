@@ -1,22 +1,21 @@
 <!-- resources/views/components/footer.blade.php -->
 <div class="bottom">
     <div class="bottom-section">
-        <h4>Company</h4>
+        <h4><b>Company</b></h4>
         <ul>
             <li><a href="/about">About us</a></li>
-            <li><a href="#">Privacy policy</a></li>
-            <li><a href="#">Affiliate program</a></li>
+            <li><a href="/privacy">Privacy policy</a></li>
         </ul>
     </div>
     <div class="bottom-section">
-        <h4>Help</h4>
+        <h4><b>Help</b></h4>
         <ul>
-            <li><a href="#">Q&A</a></li>
-            <li><a href="#">Sign up</a></li>
+            <li><a href="/contact">Q&A</a></li>
+            <li><a href="/logout">Log out</a></li>
         </ul>
     </div>
     <div class="bottom-section">
-        <h4>Contact us</h4>
+        <h4><b>Contact us</b></h4>
         <ul>
             <li>Alsion 2, 6400 Sønderborg</li>
             <li>Telephone: 6550 1160</li>

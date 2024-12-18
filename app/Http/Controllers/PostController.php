@@ -16,7 +16,7 @@ class PostController extends Controller
 {
     public function scheduler()
     {
-        $posts = Post::paginate(3);
+        $posts = Post::paginate(5);
         return view('scheduler')->with('posts', $posts);
     }
 

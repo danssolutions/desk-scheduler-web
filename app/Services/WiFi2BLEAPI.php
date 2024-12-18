@@ -17,16 +17,28 @@ class WiFi2BLEAPI
 
     public function getAllDesks(): array
     {
-        return Http::get("{$this->baseUrl}/api/v2/{$this->apiKey}/desks")->json();
+        try {
+            return Http::get("{$this->baseUrl}/api/v2/{$this->apiKey}/desks")->json();
+        } catch (\Exception $e) {
+            return [];
+        }
     }
 
     public function getDeskData(string $deskId): array
     {
-        return Http::get("{$this->baseUrl}/api/v2/{$this->apiKey}/desks/{$deskId}")->json();
+        try {
+            return Http::get("{$this->baseUrl}/api/v2/{$this->apiKey}/desks/{$deskId}")->json();
+        } catch (\Exception $e) {
+            return [];
+        }
     }
 
     public function updateDeskState(string $deskId, array $state): array
     {
-        return Http::put("{$this->baseUrl}/api/v2/{$this->apiKey}/desks/{$deskId}/state", $state)->json();
+        try {
+            return Http::put("{$this->baseUrl}/api/v2/{$this->apiKey}/desks/{$deskId}/state", $state)->json();
+        } catch (\Exception $e) {
+            return [];
+        }
     }
 }

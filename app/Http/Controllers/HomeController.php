@@ -11,6 +11,10 @@ use Illuminate\Console\Scheduling\Schedule;
 
 class HomeController extends Controller
 {
+    public function rules()
+    {
+        return view('websiteRegulations'); // Ensure this view file exists
+    }
     public function sendnotification()
     {
         $currentDay = Carbon::now()->format('l');
