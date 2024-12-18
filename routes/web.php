@@ -11,35 +11,34 @@ use App\Http\Controllers\DeskController;
 
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/settings',function(){return view('settings');});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+// Route::get('/settings',function(){return view('settings');});
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/main', function(){ return view('main');});
-Route::get('/profilepage', function(){ return view('profile');});
-Route::get('/contact', [ContactController::class, 'showContactForm'])->name('contact.form');
-Route::post('/contact', [ContactController::class, 'sendEmail'])->name('contact.send');
-Route::get('/about', function () {return view('about'); });
-Route::get('/dashboard', function () {return view('dashboard');})->middleware(['auth', 'verified'])->name('dashboard');
-Route::get('/graph',[ChartController::class,'loadGraphPage']);
+
+
 
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/scheduler', action:  [PostController::class, 'scheduler'])->name('scheduler');
+    Route::get('/', function(){ return view('main');});
+    Route::get('/contact', [ContactController::class, 'showContactForm'])->name('contact.form');
+    Route::post('/contact', [ContactController::class, 'sendEmail'])->name('contact.send');
+    Route::get('/about', function () {return view('about'); })->name('about');
+    Route::get('/graph',[ChartController::class,'loadGraphPage']);
+    Route::get('/main',function () {return view('main'); }) -> name('main');
 });
 
 require __DIR__.'/auth.php';
 
+Route::get('/privacy', [HomeController::class, 'rules'])->name('websiteRegulations');
 
-Route::get('/', action:  [PostController::class, 'index'])->name('index');
-Route::get('/create',function(){return view('create');});
+Route::get('/create',[PostController::class,'create']);
 Route::post('/post',[PostController::class,'store']);
 Route::delete('/delete/{id}',action: [PostController::class,'destroy']);
 Route::get('/edit/{id}',action: [PostController::class,'edit']);
@@ -52,4 +51,3 @@ Route::put('/posts/{id}', [PostController::class, 'update']);
 
 
 //Route::get('send',[HomeController::class,"sendnotification"]);
-Route::get('/test',[DeskController::class,"test"]);

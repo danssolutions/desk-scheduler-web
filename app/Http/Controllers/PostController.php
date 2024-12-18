@@ -10,126 +10,98 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Log;
 use App\Notifications\InvoicePaid;
 use Illuminate\Support\Facades\Notification;
+use App\Services\WiFi2BLEAPI;
 
 class PostController extends Controller
 {
-   
-
-
-    public function index()
+    public function scheduler()
     {
-        $posts = Post::paginate(3);
-        return view('index')->with('posts', $posts);
+        $posts = Post::paginate(5);
+        return view('scheduler')->with('posts', $posts);
     }
-    
+
     public function create()
     {
+        $wiFi2BLE = new WiFi2BLEAPI(env('WIFI2BLE_BASE_URL'), env('WIFI2BLE_API_KEY'));
+
+        $desks = $wiFi2BLE->getAllDesks();
+
+        return view('create', compact('desks'));
     }
 
-    
     public function store(Request $request)
     {
         $request->validate([
             'name' => 'required|string',
-            'tables' => 'required|array', 
+            'desk_id' => 'required|string',
             'height' => 'required|integer',
             'time_from' => 'required|string',
-            'days' => 'required|string', 
+            'days' => 'required|string',
             'alarm_sound' => 'required|string',
         ]);
-    
-        $days = is_array($request->days) ? implode(',', $request->days) : $request->days;
-    
+
         $post = new Post([
             'name' => $request->name,
-            "tables" => json_encode($request->input('tables')),
+            "desk_id" => $request->desk_id,
             'height' => $request->height,
             'time_from' => $request->time_from,
-            'days' => $days, 
+            'days' => $request->days,
             'alarm_sound' => $request->alarm_sound,
         ]);
-    
-        $post->save();    
-return redirect('/');
+
+        $post->save();
+        return redirect('/');
     }
-    
-    
-    
-    
+
+
+
+
     public function show(Post $post)
     {
     }
 
-    
+
     public function edit($id)
     {
+        $wiFi2BLE = new WiFi2BLEAPI(env('WIFI2BLE_BASE_URL'), env('WIFI2BLE_API_KEY'));
+        
         $posts = Post::findOrFail($id);
-        return view('edit')->with('posts', $posts);
+        $desks = $wiFi2BLE->getAllDesks();
+        return view('edit', compact('posts', 'desks'));
     }
 
-    
     public function update(Request $request, $id)
-{
-    $request->validate([
-        'name' => 'required|string',
-        'tables' => 'required|array',   
-        'height' => 'required|integer',
-        'time_from' => 'required|string',
-        'days' => 'required|string',    
-        'alarm_sound' => 'required|string',
-    ]);
+    {
+        $request->validate([
+            'name' => 'required|string',
+            'desk_id' => 'required|string',
+            'height' => 'required|integer',
+            'time_from' => 'required|string',
+            'days' => 'required|string',
+            'alarm_sound' => 'required|string',
+        ]);
 
-    $post = Post::findOrFail($id);
-    $post->update([
-        'name' => $request->name,
-        'tables' => json_encode($request->tables),
-        'height' => $request->height,
-        'time_from' => $request->time_from,
-        'days' => $request->days,       
-        'alarm_sound' => $request->alarm_sound,
-    ]);
-    notify()->success('Alarm updated successfully!');
-    return redirect('/');
-}
+        $post = Post::findOrFail($id);
+        $post->update([
+            'name' => $request->name,
+            'desk_id' => $request->desk_id,
+            'height' => $request->height,
+            'time_from' => $request->time_from,
+            'days' => $request->days,
+            'alarm_sound' => $request->alarm_sound,
+        ]);
+        notify()->success('Alarm updated successfully!');
+        return redirect('/');
+    }
 
-    
-    
-    
+
+
+
     public function destroy($id)
     {
         $post = Post::findOrFail($id);
         $post->delete();
         return back();
     }
-  
 
-    /*public function notificationdesk()
-{
-    $currentDay = Carbon::now()->format('l');
-    $currentTime = Carbon::now()->format('H:i'); // current time without seconds
-
-    // Calculate the time window in HH:MM format
-    $timeWindowStart = Carbon::now()->subMinutes(2)->format('H:i'); // 2 minutes before current time
-    $timeWindowEnd = Carbon::now()->addMinutes(2)->format('H:i');   // 2 minutes after current time
-    
-    // Fetch the posts within the time window and current day
-    $posts = Post::where('days', 'like', '%' . $currentDay . '%')
-                 ->whereRaw('time_from::time BETWEEN ? AND ?', [$timeWindowStart, $timeWindowEnd])
-                 ->get();
-    
-    // Debugging: Check the fetched posts
-    dd($posts);
-
-    // Loop through the posts and send notification for each one
-    foreach ($posts as $post) {
-        // Send a notification for each post
-        notify()->success('fire ⚡️ for ' . $post->name);
-    }
 }
-
-    */
-     
-    
-
-    
-    }

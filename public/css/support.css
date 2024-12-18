@@ -5,11 +5,26 @@
     box-sizing: border-box;
 }
 
+/* stuff for the about page*/
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: #fff;
+}
+
+main{
+    margin:auto;
+    color: black;
+}
+
 
 
 /*stuff for header*/
 .container {
-    background-color: #002e5b;
+    /* background-color: #002e5b; */
+    background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -60,7 +75,8 @@
     right: 0;
     top: 100%;
     background-color: #00152a;
-    color: #f1f1f1dc;
+    /* color: #f1f1f1dc; */
+    color: black;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     min-width: 150px;
     z-index: 10;
@@ -71,7 +87,8 @@
 .dropdown-menu a {
     display: block;
     padding: 10px;
-    color: #e9e8e8e8;
+    /* color: #e9e8e8e8; */
+    
     text-decoration: none;
     font-size: 14px;
 }
@@ -85,7 +102,7 @@
 
 
 /*stuff for contact page*/
-.main-content {
+.main-content {        /* contact page*/
     background: linear-gradient(to bottom, #002e5b, #f9f9f9);
     min-height: 75vh;
     width: 100%;
@@ -175,21 +192,37 @@ button[type="submit"]:hover {
     border-radius: 8px;
     overflow: hidden;
     padding-left: 18%;
-    padding-bottom: 50px;
+    padding-bottom: 11%;
+    padding-top: 50px;
+}
+
+.mainpage-about {
+    /* display: flex; */
+    justify-content: center;
+    width: 80%;
+    max-width: 1200px;
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    padding-left: 18%;
+    padding-bottom: 5%;
     padding-top: 50px;
 }
 
 .left-section {
+    width: 50%;
     flex: 1;
     text-align: center;
     padding: 20px;
     background: #ffffff;
+    /* background-color: #000000; */
 }
 
 .image {
-    max-width: 100%;
     height: auto;
     border-radius: 8px;
+    /* padding-left: 20%; */
 }
 
 .text {
@@ -199,10 +232,11 @@ button[type="submit"]:hover {
 }
 
 .right-section {
-    flex: 1;
+    background-color: #000000;
+    /* flex: 1; */
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction:column;
+    justify-content: right;
     align-items: center;
     padding: 20px;
     background: #ffffff;
@@ -325,14 +359,7 @@ footer marquee {
     width: 100%;
 }
 
-/* stuff for the about page*/
-body {
-    background-color: white;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    background: #fff;
-}
+
 
 .team {
     display: grid;
@@ -340,6 +367,7 @@ body {
     gap: 30px;
     justify-items: center;
     margin: 20px;
+    padding-bottom: 8%;
 }
 
 
@@ -422,7 +450,7 @@ body {
 
 .form_alarm {
     background: rgb(135, 148, 232);
-    color: rgb(249, 249, 251);
+    color: #333;
     padding: 20px;
     border-radius: 10px;
 }
