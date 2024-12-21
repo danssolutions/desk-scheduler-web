@@ -16,8 +16,13 @@ class PostController extends Controller
 {
     public function scheduler()
     {
-        $posts = Post::paginate(5);
-        return view('scheduler')->with('posts', $posts);
+        $user = auth()->user();
+        if ($user->usertype === 'admin') {
+            $posts = Post::paginate(5); // Admin sees all posts
+        } else {
+            $posts = Post::where('desk_id', $user->desk_id)->paginate(5); // Users see only their desk's posts
+        }
+        return view('scheduler', compact('posts'));
     }
 
     public function create()
@@ -33,16 +38,19 @@ class PostController extends Controller
     {
         $request->validate([
             'name' => 'required|string',
-            'desk_id' => 'required|string',
+            'desk_id' => 'nullable|string', // Nullable because it might be auto-filled
             'height' => 'required|integer',
             'time_from' => 'required|string',
             'days' => 'required|string',
             'alarm_sound' => 'required|string',
         ]);
 
+        $user = auth()->user();
+        $deskId = $user->usertype === 'admin' ? $request->desk_id : $user->desk_id;
+
         $post = new Post([
             'name' => $request->name,
-            "desk_id" => $request->desk_id,
+            'desk_id' => $deskId,
             'height' => $request->height,
             'time_from' => $request->time_from,
             'days' => $request->days,
@@ -63,11 +71,17 @@ class PostController extends Controller
 
     public function edit($id)
     {
+        $post = Post::findOrFail($id);
+        $user = auth()->user();
+
+        if ($user->usertype !== 'admin' && $post->desk_id !== $user->desk_id) {
+            abort(403, 'Unauthorized access to this alarm.');
+        }
+
         $wiFi2BLE = new WiFi2BLEAPI(env('WIFI2BLE_BASE_URL'), env('WIFI2BLE_API_KEY'));
-        
-        $posts = Post::findOrFail($id);
         $desks = $wiFi2BLE->getAllDesks();
-        return view('edit', compact('posts', 'desks'));
+
+        return view('edit', compact('post', 'desks'));
     }
 
     public function update(Request $request, $id)
@@ -100,6 +114,12 @@ class PostController extends Controller
     public function destroy($id)
     {
         $post = Post::findOrFail($id);
+        $user = auth()->user();
+
+        if ($user->usertype !== 'admin' && $post->desk_id !== $user->desk_id) {
+            abort(403, 'Unauthorized access to this alarm.');
+        }
+
         $post->delete();
         return back();
     }
