@@ -9,13 +9,13 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('chart_models', function (Blueprint $table) {
             $table->id();
-            $table->string('table_name');
+            $table->string('desk_id');
             $table->integer('height');
-            $table->date('time');
+            $table->timestamp('time');
             $table->timestamps();
         });
     }

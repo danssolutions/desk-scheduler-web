@@ -13,7 +13,9 @@
                 <select id="desk_id" name="desk_id" class="form-control" required>
                     <option value="" disabled>Select a desk</option>
                     @foreach($desks as $desk)
-                        <option value="{{ $desk }}">{{ 'Desk ' . $desk }}</option>
+                        <option value="{{ $desk }}" {{ $posts->desk_id == $desk ? 'selected' : '' }}>
+                            {{ 'Desk ' . $desk }}
+                        </option>
                     @endforeach
                 </select>
 
@@ -25,13 +27,13 @@
                 
                 <label for="days">Select Day:</label>
                 <select id="days" name="days" class="form-control" required>
-                    <option value="Monday">Monday</option>
-                    <option value="Tuesday">Tuesday</option>
-                    <option value="Wednesday">Wednesday</option>
-                    <option value="Thursday">Thursday</option>
-                    <option value="Friday">Friday</option>
-                    <option value="Saturday">Saturday</option>
-                    <option value="Sunday">Sunday</option>
+                    <option value="Monday" {{ $posts->days == 'Monday' ? 'selected' : '' }}>Monday</option>
+                    <option value="Tuesday" {{ $posts->days == 'Tuesday' ? 'selected' : '' }}>Tuesday</option>
+                    <option value="Wednesday" {{ $posts->days == 'Wednesday' ? 'selected' : '' }}>Wednesday</option>
+                    <option value="Thursday" {{ $posts->days == 'Thursday' ? 'selected' : '' }}>Thursday</option>
+                    <option value="Friday" {{ $posts->days == 'Friday' ? 'selected' : '' }}>Friday</option>
+                    <option value="Saturday" {{ $posts->days == 'Saturday' ? 'selected' : '' }}>Saturday</option>
+                    <option value="Sunday" {{ $posts->days == 'Sunday' ? 'selected' : '' }}>Sunday</option>
                 </select>
 
                 <label for="alarm_sound">Select Alarm Sound:</label>

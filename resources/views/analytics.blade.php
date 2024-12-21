@@ -1,42 +1,39 @@
 <x-app-layout>
+    <body>
+        <div class="card_body">
+            <canvas id="myChart"></canvas>
+        </div>
 
-<body>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script>
+            const ctx = document.getElementById('myChart');
+            const labels = {!! json_encode($labels) !!}; // X-axis (time)
+            const datasets = {!! json_encode($datasets) !!}; // Each desk's data
 
-
-
-    <div class="card_body">
-        <canvas id="myChart"></canvas>
-    </div>
-
-
-
- 
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="{{ asset('js/support.js') }}"></script>
-    <script>
-        const ctx = document.getElementById('myChart');
-        const labels = {!! json_encode($labels) !!};
-        const data = {!! json_encode($data) !!};
-
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: labels,
-                datasets: [{
-                    label: '# Height',
-                    data: data,
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    </script>
-</body>
+            new Chart(ctx, {
+                type: 'line', // Line chart for better visualization
+                data: {
+                    labels: labels,
+                    datasets: datasets,
+                },
+                options: {
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: 'Time',
+                            },
+                        },
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Height (mm)',
+                            },
+                        },
+                    },
+                },
+            });
+        </script>
+    </body>
 </x-app-layout>
