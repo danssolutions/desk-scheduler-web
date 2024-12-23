@@ -16,7 +16,9 @@
                         @endforeach
                     </select>
                 @else
+                    {{-- Show desk ID as text for non-admins --}}
                     <input type="hidden" name="desk_id" value="{{ auth()->user()->desk_id }}">
+                    <p><b>Desk:</b> Desk {{ auth()->user()->desk_id }}</p>
                 @endif
 
                 <input type="number" id="height" name="height" class="form-control" placeholder="Height (mm)"

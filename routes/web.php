@@ -6,8 +6,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\DeskController;
-
+use App\Http\Controllers\AdminController;
+use App\Http\Middleware\EnsureAdmin;
 
 
 
@@ -45,6 +45,12 @@ Route::get('/edit/{id}',action: [PostController::class,'edit']);
 Route::put('/update/{id}',action: [PostController::class,'update']);
 
 Route::put('/posts/{id}', [PostController::class, 'update']);
+
+Route::middleware(['auth', EnsureAdmin::class])->group(function () {
+    Route::get('/admin/users', [AdminController::class, 'manageUsers'])->name('admin.users');
+    Route::post('/admin/users/{id}/update-desk-id', [AdminController::class, 'updateDeskId'])->name('admin.update-desk-id');
+    Route::delete('/admin/users/{id}/delete', [AdminController::class, 'deleteUser'])->name('admin.delete-user');
+});
 
 // Route::get('/notify', [PostController::class, 'notificationdesk']);
 
