@@ -38,4 +38,23 @@ class PicoAPI
     {
         return $this->sendCommand('/api/errend');
     }
+
+    public function login(string $username): array
+    {
+        try {
+            $formattedUsername = str_replace(' ', '_', $username); // replace spaces w/ underscores for Pico to parse
+            return $this->sendCommand('/api/login', ['username' => $formattedUsername]);
+        } catch (\Exception $e) {
+            return [];
+        }
+    }
+
+    public function logout(): array
+    {
+        try {
+            return $this->sendCommand('/api/logout');
+        } catch (\Exception $e) {
+            return [];
+        }
+    }
 }
