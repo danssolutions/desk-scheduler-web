@@ -7,13 +7,19 @@
                 @csrf
                 <input id="name" type="text" name="name" class="form-control" placeholder="Name" required>
 
-                <label for="desk_id">Select Desk:</label>
-                <select id="desk_id" name="desk_id" class="form-control" required>
-                    <option value="" disabled selected>Select a desk</option>
-                    @foreach($desks as $desk)
-                        <option value="{{ $desk }}">{{ 'Desk ' . $desk }}</option>
-                    @endforeach
-                </select>
+                @if(auth()->user()->usertype === 'admin')
+                    <label for="desk_id">Select Desk:</label>
+                    <select id="desk_id" name="desk_id" class="form-control">
+                        <option value="" disabled selected>Select a desk</option>
+                        @foreach($desks as $desk)
+                            <option value="{{ $desk }}">{{ 'Desk ' . $desk }}</option>
+                        @endforeach
+                    </select>
+                @else
+                    {{-- Show desk ID as text for non-admins --}}
+                    <input type="hidden" name="desk_id" value="{{ auth()->user()->desk_id }}">
+                    <p><b>Desk:</b> Desk {{ auth()->user()->desk_id }}</p>
+                @endif
 
                 <input type="number" id="height" name="height" class="form-control" placeholder="Height (mm)"
                     min="660" max="1320" required>
